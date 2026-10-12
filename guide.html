@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Гид новосёла Финляндии — Harmony Life Ry</title>
+<meta name="description" content="Практический гид для тех, кто только приехал в Финляндию. Документы, банк, KELA, жильё, медицина — всё по шагам.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple-main:#9b6cc4;
+    --purple-dark:#5a3478;
+    --gold:#c4a060;
+    --gold-light:rgba(196,160,96,.15);
+    --bg:#f7f4fa;
+    --ink:#2d1f3d;
+    --ink-soft:#7a6a8a;
+    --glass:rgba(255,255,255,.72);
+    --shadow:0 8px 32px -8px rgba(107,74,142,.18);
+    --radius:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;}
+  a{color:var(--purple-main);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* BG */
+  .bg-layer{position:fixed;inset:-8%;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(ellipse 60% 40% at 15% 8%,rgba(196,168,224,.45),transparent 60%),
+      radial-gradient(ellipse 55% 40% at 85% 15%,rgba(232,213,245,.5),transparent 60%),
+      radial-gradient(ellipse 60% 45% at 20% 90%,rgba(196,160,96,.12),transparent 60%),
+      radial-gradient(ellipse 70% 50% at 90% 85%,rgba(155,108,196,.22),transparent 60%);
+    animation:drift 90s ease-in-out infinite alternate;}
+  @keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(1.4%,-1.4%) scale(1.03);}}
+
+  /* LANG BAR */
+  .lang-bar{display:flex;justify-content:center;gap:6px;padding:12px 20px 0;flex-wrap:wrap;position:relative;z-index:2;}
+  .lang-btn{padding:5px 14px;border:1px solid rgba(196,160,96,.35);border-radius:999px;background:var(--glass);font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:700;color:var(--ink-soft);cursor:pointer;transition:all .2s;}
+  .lang-btn.active,.lang-btn:hover{background:var(--purple-main);color:#fff;border-color:var(--purple-main);}
+
+  /* HEADER */
+  header{text-align:center;padding:24px 20px 32px;position:relative;z-index:1;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--ink-soft);margin-bottom:20px;padding:8px 16px;background:var(--glass);border-radius:999px;border:1px solid rgba(196,160,96,.25);}
+  .back-link:hover{color:var(--purple-dark);text-decoration:none;}
+  header .eyebrow{font-size:.78rem;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+  header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,7vw,3rem);color:var(--purple-dark);font-weight:700;line-height:1.15;}
+  header .sub{font-size:.98rem;color:var(--ink-soft);margin-top:10px;max-width:520px;margin-left:auto;margin-right:auto;}
+  .badge{display:inline-block;background:var(--gold-light);border:1px solid rgba(196,160,96,.4);border-radius:999px;padding:5px 14px;font-size:.78rem;color:var(--gold);font-weight:700;margin-top:14px;}
+
+  /* TABS */
+  .tabs-wrap{max-width:680px;margin:0 auto 32px;padding:0 20px;}
+  .tabs{display:flex;background:rgba(255,255,255,.6);border-radius:999px;padding:5px;gap:4px;border:1px solid rgba(196,160,96,.2);}
+  .tab-btn{flex:1;padding:10px 8px;border:none;background:transparent;border-radius:999px;font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:600;color:var(--ink-soft);cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:6px;}
+  .tab-btn svg{width:16px;height:16px;flex-shrink:0;}
+  .tab-btn.active{background:var(--purple-main);color:#fff;box-shadow:0 4px 14px -4px rgba(155,108,196,.5);}
+
+  /* CONTENT */
+  .tab-panel{display:none;max-width:680px;margin:0 auto;padding:0 20px 60px;}
+  .tab-panel.active{display:block;}
+
+  /* CHECKLIST */
+  .checklist-box{background:linear-gradient(135deg,rgba(196,160,96,.12),rgba(155,108,196,.08));border:1px solid rgba(196,160,96,.35);border-radius:var(--radius);padding:24px 26px;margin-bottom:28px;}
+  .checklist-box h2{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .checklist-box h2 svg{width:20px;height:20px;color:var(--gold);flex-shrink:0;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .checklist li{display:flex;align-items:flex-start;gap:12px;font-size:.92rem;}
+  .checklist li::before{content:'';display:inline-block;width:22px;height:22px;min-width:22px;border-radius:50%;background:var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:14px;background-repeat:no-repeat;background-position:center;margin-top:1px;}
+
+  /* ACCORDION */
+  .section{background:var(--glass);border:1px solid rgba(196,160,96,.18);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;}
+  .section summary{padding:16px 20px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;font-weight:700;font-size:.96rem;color:var(--purple-dark);}
+  .section summary::-webkit-details-marker{display:none;}
+  .section summary .ico{width:34px;height:34px;min-width:34px;border-radius:50%;background:var(--gold-light);display:flex;align-items:center;justify-content:center;}
+  .section summary .ico svg{width:17px;height:17px;color:var(--gold);}
+  .section summary .arrow{margin-left:auto;width:18px;height:18px;color:var(--ink-soft);transition:transform .3s;}
+  details[open] summary .arrow{transform:rotate(180deg);}
+  .section-body{padding:4px 20px 20px 66px;font-size:.9rem;color:var(--ink);}
+  .section-body p{margin-bottom:10px;}
+  .section-body ul{margin:8px 0 10px 16px;display:flex;flex-direction:column;gap:6px;}
+  .section-body li{padding-left:4px;}
+  .section-body .highlight{background:var(--gold-light);border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0;font-weight:600;font-size:.88rem;display:flex;align-items:flex-start;gap:8px;}
+  .section-body .highlight::before{content:'';display:inline-block;width:16px;height:16px;min-width:16px;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23c4a060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat;}
+  .section-body .warn{background:rgba(155,108,196,.1);border-left:3px solid var(--purple-main);padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0;font-size:.88rem;display:flex;align-items:flex-start;gap:8px;}
+  .section-body .warn::before{content:'';display:inline-block;width:16px;height:16px;min-width:16px;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%239b6cc4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat;}
+  .section-body .link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .section-body .link-chip{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(255,255,255,.8);border:1px solid rgba(196,160,96,.3);border-radius:999px;font-size:.82rem;color:var(--purple-dark);font-weight:600;}
+  .section-body .link-chip:hover{background:var(--gold-light);text-decoration:none;}
+  .price-tag{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold);}
+
+  /* AGENCIES */
+  .agencies{background:var(--glass);border:1px solid rgba(155,108,196,.2);border-radius:var(--radius);padding:20px 22px;margin-bottom:12px;}
+  .agencies h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--purple-dark);margin-bottom:14px;}
+  .agency-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .agency{background:rgba(255,255,255,.7);border-radius:12px;padding:12px 14px;}
+  .agency .name{font-weight:700;font-size:.88rem;color:var(--purple-dark);}
+  .agency .desc{font-size:.78rem;color:var(--ink-soft);margin-top:2px;}
+  .agency a{font-size:.78rem;color:var(--gold);font-weight:600;}
+
+  /* CONTACT BLOCK */
+  @keyframes shimmer{0%{background-position:200% center;}100%{background-position:-200% center;}}
+  @keyframes btn-pulse{0%,100%{box-shadow:0 0 0 0 rgba(196,160,96,.6);}65%{box-shadow:0 0 0 14px rgba(196,160,96,.0);}}
+  @keyframes float-dot{0%,100%{transform:translateY(0) scale(1);opacity:.18;}50%{transform:translateY(-12px) scale(1.2);opacity:.32;}}
+  .contact-block{
+    background:linear-gradient(140deg,#fffdf7 0%,#fdf6e3 45%,#f9f0d8 100%);
+    border:1.5px solid rgba(196,160,96,.35);
+    border-radius:var(--radius);padding:40px 28px 36px;margin:28px 0;text-align:center;
+    position:relative;overflow:hidden;
+    box-shadow:0 8px 40px -8px rgba(196,160,96,.22), 0 2px 0 0 rgba(196,160,96,.18);
+  }
+  .contact-block::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(196,160,96,.18),transparent 65%);
+    pointer-events:none;
+  }
+  /* decorative floating dots */
+  .contact-block::after{
+    content:'● ● ●';position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+    font-size:.45rem;color:var(--gold);letter-spacing:8px;opacity:.35;
+  }
+  .contact-block h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--purple-dark);margin-bottom:6px;letter-spacing:.01em;line-height:1.2;}
+  .contact-block .cb-sub{font-size:.88rem;color:var(--ink-soft);margin-bottom:22px;max-width:360px;margin-left:auto;margin-right:auto;line-height:1.5;}
+  .contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;}
+  .contact-link{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:var(--purple-main);color:#fff;border-radius:999px;font-size:.85rem;font-weight:700;}
+  .contact-link:hover{background:var(--purple-dark);text-decoration:none;}
+  .contact-link.outline{
+    background:linear-gradient(90deg,#c4a060 0%,#e8c97a 25%,#c4a060 50%,#e8c97a 75%,#c4a060 100%);
+    background-size:250% auto;
+    color:#fff;border:none;
+    font-size:.95rem;padding:14px 36px;
+    font-weight:800;letter-spacing:.04em;border-radius:999px;
+    box-shadow:0 4px 18px rgba(196,160,96,.45);
+    animation:shimmer 12s linear infinite, btn-pulse 11s ease-in-out infinite;
+    transition:transform .2s;
+    text-shadow:0 1px 4px rgba(120,80,0,.25);
+  }
+  .contact-link.outline:hover{transform:scale(1.07);text-decoration:none;}
+
+  /* FOOTER */
+  footer{text-align:center;padding:32px 20px;font-size:.82rem;color:var(--ink-soft);}
+  footer a{color:var(--purple-main);font-weight:600;}
+
+  @media(max-width:480px){
+    .agency-grid{grid-template-columns:1fr;}
+    .section-body{padding-left:20px;}
+    .checklist li::before{min-width:20px;width:20px;height:20px;}
+  }
+</style>
+</head>
+<body>
+<div class="bg-layer"></div>
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+  <button class="lang-btn" onclick="setLang('ua')">UA</button>
+  <button class="lang-btn" onclick="setLang('fi')">FI</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+
+<header>
+  <div class="eyebrow">Harmony Life Ry · Kajaani</div>
+  <h1 data-i18n="h1">Гид новосёла Финляндии</h1>
+  <p class="sub" data-i18n="sub">Пошаговое руководство для тех, кто только приехал — документы, банк, KELA, медицина и жильё</p>
+  <div class="badge" data-i18n="badge">Актуально · Октябрь 2026</div>
+</header>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('student',event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <span data-i18n="tab_student">Студент</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('worker',event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      <span data-i18n="tab_worker">Работник</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('refugee',event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span data-i18n="tab_refugee">Беженец</span>
+    </button>
+  </div>
+</div>
+
+<!-- ===== СТУДЕНТ ===== -->
+<div class="tab-panel active" id="tab-student">
+
+  <div class="checklist-box">
+    <h2>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span data-i18n="s_check_h">Первые 30 дней — чеклист</span>
+    </h2>
+    <ol class="checklist">
+      <li data-i18n="s_c1">Получить oleskelulupakortti (карту ВНЖ) или подтвердить решение Migri</li>
+      <li data-i18n="s_c2">Явиться в DVV лично: получить henkilötunnus + kotikunta + зарегистрировать адрес</li>
+      <li data-i18n="s_c3">Открыть банковский счёт (S-Pankki, Nordea или OP)</li>
+      <li data-i18n="s_c4">Оформить verokortti в OmaVero, если планируешь работать</li>
+      <li data-i18n="s_c5">Зарегистрироваться в университете, получить студенческий и доступ к YTHS</li>
+      <li data-i18n="s_c6">Проверить право на KELA (opintotuki обычно недоступен, но уточни)</li>
+      <li data-i18n="s_c7">Настроить Suomi.fi и OmaKanta</li>
+      <li data-i18n="s_c8">Оформить проездной и финскую SIM-карту</li>
+    </ol>
+  </div>
+
+  <div class="agencies">
+    <h3 data-i18n="agencies_h">Ключевые ведомства</h3>
+    <div class="agency-grid">
+      <div class="agency"><div class="name">Migri</div><div class="desc" data-i18n="ag_migri">ВНЖ, Enter Finland</div><a href="https://migri.fi" target="_blank">migri.fi</a></div>
+      <div class="agency"><div class="name">DVV</div><div class="desc" data-i18n="ag_dvv">Регистрация, henkilötunnus</div><a href="https://dvv.fi" target="_blank">dvv.fi</a></div>
+      <div class="agency"><div class="name">Vero</div><div class="desc" data-i18n="ag_vero">Налоговая карта, OmaVero</div><a href="https://vero.fi" target="_blank">vero.fi</a></div>
+      <div class="agency"><div class="name">KELA</div><div class="desc" data-i18n="ag_kela">Соцстрахование</div><a href="https://kela.fi" target="_blank">kela.fi</a></div>
+      <div class="agency"><div class="name">YTHS</div><div class="desc" data-i18n="ag_yths">Студенческая медицина</div><a href="https://yths.fi" target="_blank">yths.fi</a></div>
+      <div class="agency"><div class="name">InfoFinland</div><div class="desc" data-i18n="ag_info">На русском языке</div><a href="https://infofinland.fi" target="_blank">infofinland.fi</a></div>
+    </div>
+  </div>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <span data-i18n="s_vnj_h">ВНЖ и документы</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <div class="highlight"><span data-i18n="s_fee_2026">Пошлина 2026: <span class="price-tag">600 €</span> онлайн · <span class="price-tag">750 €</span> бумажно</span></div>
+      <p data-i18n="s_vnj_p1">Подавать через <strong>Enter Finland</strong> (enterfinland.fi) минимум за 3 месяца до начала программы.</p>
+      <p data-i18n="s_docs_h"><strong>Что взять с собой:</strong></p>
+      <ul>
+        <li data-i18n="s_d1">Действующий паспорт</li>
+        <li data-i18n="s_d2">Безусловное письмо о зачислении</li>
+        <li data-i18n="s_d3">Подтверждение средств: минимум <strong>9 600 €</strong> (800 €/мес × 12) на счёте</li>
+        <li data-i18n="s_d4">Медицинская страховка</li>
+        <li data-i18n="s_d5">Подтверждение жилья</li>
+      </ul>
+      <div class="warn"><span data-i18n="s_vnj_w1">Стипендия вычитается из требуемой суммы. Если стипендия 2 000 € — нужно 7 600 € на счёте. Доход от работы за первый год НЕ засчитывается.</span></div>
+      <p data-i18n="s_vnj_p2"><strong>Сроки 2026:</strong> 82% положительных решений — за 30 дней и менее.</p>
+      <p data-i18n="s_vnj_p3">После решения Migri — явиться в <strong>DVV</strong> лично: зарегистрировать henkilötunnus, kotikunta и адрес. Henkilötunnus часто присваивается уже вместе с решением Migri.</p>
+      <p data-i18n="s_vnj_p4"><strong>Продление (jatkolupa):</strong> подавать через Enter Finland за 3 мес. до истечения. Требуется не менее <strong>45 ECTS</strong> за учебный год (120 ч/нед по акад. нагрузке). Не набрал кредиты — обоснуй причины письменно.</p>
+      <p data-i18n="s_vnj_p5"><strong>Постоянный ВНЖ (с 8 января 2026):</strong> через 6 лет непрерывного проживания + уровень финского B1, или через 4 года при документально подтверждённом доходе более <strong>40 000 €/год</strong>.</p>
+      <p data-i18n="s_vnj_p6"><strong>После учёбы — поиск работы:</strong> разрешение työnhakijana (työnhakija-oleskelulupa) — выдаётся на 12 месяцев, возможно продление до 24 месяцев. Подаётся через Enter Finland.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://enterfinland.fi" target="_blank">Enter Finland</a>
+        <a class="link-chip" href="https://migri.fi" target="_blank">Migri.fi</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+      <span data-i18n="s_bank_h">Банковский счёт</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="s_bank_p1">Нужен henkilötunnus. Открытие только лично в Финляндии. Документы: паспорт, henkilötunnus, адрес, ВНЖ.</p>
+      <ul>
+        <li data-i18n="s_bank_l1"><strong>S-Pankki</strong> — принимает иностранцев, без записи, карта придёт примерно через 1 месяц</li>
+        <li data-i18n="s_bank_l2"><strong>Nordea</strong> — паспорт + henkilötunnus, запись обязательна</li>
+        <li data-i18n="s_bank_l3"><strong>OP</strong> — нужна запись; для граждан non-EU может понадобиться финская ID-карта</li>
+      </ul>
+      <p data-i18n="s_bank_p2"><strong>Альтернативы в переходный период:</strong> Wise, Revolut, Bunq, Holvi — дают европейский IBAN и работают без henkilötunnus.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://www.s-pankki.fi" target="_blank">S-Pankki</a>
+        <a class="link-chip" href="https://www.nordea.fi" target="_blank">Nordea</a>
+        <a class="link-chip" href="https://wise.com" target="_blank">Wise</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <span data-i18n="s_vero_h">Налоговая карта (verokortti)</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <div class="warn"><span data-i18n="s_vero_w">Без verokortti работодатель удержит 60% зарплаты!</span></div>
+      <p data-i18n="s_vero_p1">Оформить через <strong>OmaVero</strong> на vero.fi — вход по банковским кодам или через Suomi.fi. С ноября 2025 карты только цифровые, бумажные не рассылаются.</p>
+      <p data-i18n="s_vero_p2">Студент может работать в среднем до <strong>30 ч/нед</strong> (≤ 1 560 ч/год). Прохождение практики (harjoittelu/internship) в рамках учебного плана не засчитывается в этот лимит.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://www.vero.fi/omavero" target="_blank">OmaVero</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.67 3.36a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <span data-i18n="s_kela_h">KELA и медицина</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="s_kela_p1">Студент без постоянного проживания обычно <strong>не получает</strong> пособие KELA (opintotuki, asumistuki). Исключение: если работаешь не менее 10 ч/нед стабильно 4+ месяца.</p>
+      <p data-i18n="s_kela_p2"><strong>Медицина до Kela-kortti:</strong> частная страховка (обязательна для ВНЖ). Студенты вузов и AMK — <strong>YTHS</strong> (студенческая поликлиника): профилактика, врач, психолог. Регистрация на yths.fi.</p>
+      <p data-i18n="s_kela_p3"><strong>В Кайнуу:</strong> скорая и неотложка — Kainuun hyvinvointialue, päivystys по адресу Kajaani. Экстренная помощь: 112.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://yths.fi" target="_blank">YTHS</a>
+        <a class="link-chip" href="https://kainuunhyvinvointialue.fi" target="_blank">Kainuun hyvinvointialue</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <span data-i18n="s_housing_h">Жильё</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="s_housing_p1">Студенческие фонды: <strong>HOAS</strong> (Хельсинки), <strong>TOAS</strong> (Тампере), <strong>POAS</strong> (Оулу) — подавай заявку сразу после зачисления, очередь может быть длинной.</p>
+      <p data-i18n="s_housing_p2">В Кайнуу — свяжись с Kainuun Opiskelija-asunnot или Kajaanin Opiskelija-asunnot. Объявления также на Vuokraovi.com и Oikotie.fi.</p>
+      <p data-i18n="s_housing_p3">Права арендатора защищены законом <em>Laki asuinhuoneiston vuokrauksesta 481/1995</em>: залог не более 3 мес. аренды, письменный договор обязателен, право на снижение аренды при непригодности жилья.</p>
+      <p data-i18n="s_housing_p4"><strong>ARA-жильё</strong> — субсидированное по доходу. Обращаться в муниципальное жилищное бюро (Kajaanin Mamselli / asuntotoimisto).</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://vuokraovi.com" target="_blank">Vuokraovi.com</a>
+        <a class="link-chip" href="https://oikotie.fi/vuokra-asunnot" target="_blank">Oikotie.fi</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <span data-i18n="s_lang_h">Язык и интеграция</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <div class="highlight"><span data-i18n="s_lang_hi">Начни учить финский с первого семестра — языковые кредиты (A2–B1 = 15 ECTS) нужны для постоянного ВНЖ через 6 лет.</span></div>
+      <p data-i18n="s_lang_p1">Университетские курсы финского и шведского входят в степень и дают ECTS-кредиты. Для постоянного ВНЖ (с 8 января 2026) нужен уровень <strong>B1 + 6 лет</strong> проживания, или доход более 40 000 €/год + 4 года.</p>
+      <p data-i18n="s_lang_p2">Kotoutumiskoulutus (интеграционные курсы финского от государства) — в основном для безработных. Студентам очной формы обычно недоступен, но уточни в своём муниципалитете.</p>
+      <p data-i18n="s_lang_p3">В Кайнуу бесплатные курсы финского через Kainuun Aikuiskoulutuskeskus (KAIKO) и библиотеки Kajaani.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://kaiko.fi" target="_blank">KAIKO — курсы</a>
+        <a class="link-chip" href="https://kajaani.fi/kirjasto" target="_blank">Библиотека Kajaani</a>
+      </div>
+    </div>
+  </details>
+
+  <div class="contact-block">
+    <h3 data-i18n="contact_h">Будь собой — откройся в HARMONY</h3>
+    <p class="cb-sub" data-i18n="contact_sub">Общественная организация в Финляндии, объединяющая людей разных культур для интеграции, саморазвития и творчества</p>
+    <div class="contact-links">
+      <a class="contact-link outline" href="https://t.me/harmony_life_ry_bot/site" target="_blank" rel="noopener" data-i18n="contact_btn">Познакомиться с нами</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== РАБОТНИК ===== -->
+<div class="tab-panel" id="tab-worker">
+
+  <div class="checklist-box">
+    <h2>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span data-i18n="w_check_h">Первые 30 дней — чеклист</span>
+    </h2>
+    <ol class="checklist">
+      <li data-i18n="w_c1">Получить oleskelulupakortti (карту ВНЖ)</li>
+      <li data-i18n="w_c2">DVV: henkilötunnus + kotikunta + зарегистрировать адрес</li>
+      <li data-i18n="w_c3">Открыть банковский счёт (S-Pankki, Nordea, OP)</li>
+      <li data-i18n="w_c4">Оформить verokortti в OmaVero до первой зарплаты (иначе 60% удержание!)</li>
+      <li data-i18n="w_c5">Подать «Moving to Finland» в KELA и получить Kela-kortti</li>
+      <li data-i18n="w_c6">Проверить трудовой договор; вступить в профсоюз и кассу безработицы</li>
+      <li data-i18n="w_c7">Записаться на производственное здравоохранение (työterveyshuolto)</li>
+      <li data-i18n="w_c8">Suomi.fi идентификация, OmaKanta; при детях — päiväkoti/школа</li>
+    </ol>
+  </div>
+
+  <div class="agencies">
+    <h3 data-i18n="agencies_h">Ключевые ведомства</h3>
+    <div class="agency-grid">
+      <div class="agency"><div class="name">Migri</div><div class="desc" data-i18n="ag_migri_w">ВНЖ работника (TTOL)</div><a href="https://migri.fi" target="_blank">migri.fi</a></div>
+      <div class="agency"><div class="name">DVV</div><div class="desc" data-i18n="ag_dvv">Регистрация, henkilötunnus</div><a href="https://dvv.fi" target="_blank">dvv.fi</a></div>
+      <div class="agency"><div class="name">Vero / OmaVero</div><div class="desc" data-i18n="ag_vero">Налоговая карта, OmaVero</div><a href="https://vero.fi" target="_blank">vero.fi</a></div>
+      <div class="agency"><div class="name">KELA</div><div class="desc" data-i18n="ag_kela_w">Соцстрахование, Kela-kortti</div><a href="https://kela.fi" target="_blank">kela.fi</a></div>
+      <div class="agency"><div class="name">TE-toimisto</div><div class="desc" data-i18n="ag_te">Биржа труда</div><a href="https://te-palvelut.fi" target="_blank">te-palvelut.fi</a></div>
+      <div class="agency"><div class="name">InfoFinland</div><div class="desc" data-i18n="ag_info">На русском языке</div><a href="https://infofinland.fi" target="_blank">infofinland.fi</a></div>
+    </div>
+  </div>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <span data-i18n="w_vnj_h">ВНЖ работника (TTOL)</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <div class="highlight"><span data-i18n="w_fee">Пошлина 2026: <span class="price-tag">750 €</span> онлайн · <span class="price-tag">950 €</span> бумажно</span></div>
+      <p data-i18n="w_vnj_p1">Подаётся через <strong>Enter Finland</strong> (enterfinland.fi). Работодатель дополняет заявление условиями труда (työnantajan selvitys).</p>
+      <div class="warn"><span data-i18n="w_vnj_w1">Специалист (зарплата ≥ 3 937 €/мес): отдельное разрешение fast-track, решение за 2 недели, пошлина 530 € онлайн.</span></div>
+      <p data-i18n="w_vnj_p2"><strong>Сроки 2026:</strong> в среднем <strong>17 дней</strong> для положительного решения (данные июль 2026).</p>
+      <p data-i18n="w_vnj_p3">После решения Migri — DVV лично для henkilötunnus и kotikunta.</p>
+      <p data-i18n="w_vnj_p4"><strong>Постоянный ВНЖ (с 8 января 2026):</strong> через 6 лет непрерывного проживания + B1 + 2 года стажа, или через 4 года при доходе более 40 000 €/год.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://enterfinland.fi" target="_blank">Enter Finland</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.67 3.36a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <span data-i18n="w_kela_h">KELA и социальные пособия</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <div class="highlight"><span data-i18n="w_kela_hi">Работник застрахован в KELA с первого дня работы при зарплате ≥ 800,02 €/мес</span></div>
+      <p data-i18n="w_kela_p1">Подать «Moving to Finland» в Kela. Альтернативно — через <strong>International House Helsinki</strong> (ihhelsinki.fi) если переезжаешь через Хельсинки. Kela-kortti придёт почтой в течение 1–2 недель.</p>
+      <p data-i18n="w_kela_p2"><strong>Asumistuki (жилищное пособие):</strong> при низком доходе, зависит от аренды и дохода. Подать через kela.fi или лично.</p>
+      <p data-i18n="w_kela_p3"><strong>Toimeentulotuki (последняя инстанция):</strong> базовая сумма <span class="price-tag">578,43 €/мес</span> (с марта 2026; до марта 2026 было 596,32 €). При нехватке средств на базовые нужды.</p>
+      <p data-i18n="w_kela_p4"><strong>Медицина:</strong> через работодателя (työterveyshuolto) для рабочих вопросов. Для специализированной помощи — зарегистрируйся в местном terveyskeskus. В Кайнуу — Kainuun hyvinvointialue. Экстренная: 112.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://kela.fi" target="_blank">Kela.fi</a>
+        <a class="link-chip" href="https://ihhelsinki.fi" target="_blank">International House Helsinki</a>
+        <a class="link-chip" href="https://kainuunhyvinvointialue.fi" target="_blank">Kainuun hyvinvointialue</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <span data-i18n="w_vero_h">Налоговая карта и зарплата</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <div class="warn"><span data-i18n="w_vero_w">Без verokortti работодатель удержит 60% — оформи до первой зарплаты!</span></div>
+      <p data-i18n="w_vero_p1">OmaVero (vero.fi) — вход по банковским кодам или через Suomi.fi. Карта только цифровая (с ноября 2025).</p>
+      <p data-i18n="w_vero_p2">Одна карта действует для всех работодателей одновременно.</p>
+      <p data-i18n="w_vero_p3">При наличии дохода вне Финляндии — проконсультируйся о нерезидентском налогообложении (rajoitetusti verovelvollinen).</p>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <span data-i18n="w_rights_h">Работа и права</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="w_rights_p1">Трудовой договор (työsopimus) — минимальные права по <strong>TES</strong> (коллективному договору отрасли). Проверь все условия перед подписанием.</p>
+      <p data-i18n="w_rights_p2">Оплачиваемый отпуск начисляется с первого года — 2,5 дня за каждый полный рабочий месяц (при стаже >1 года).</p>
+      <p data-i18n="w_rights_p3"><strong>Профсоюзы:</strong> PAM (сфера услуг), SAK (центральное объединение), AKT (транспорт). Вступи как можно скорее — членство в <strong>кассе безработицы (työttömyyskassa)</strong> даёт повышенное пособие при потере работы.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://tyosuojelu.fi" target="_blank">Надзор за условиями труда</a>
+        <a class="link-chip" href="https://te-palvelut.fi" target="_blank">TE-toimisto</a>
+        <a class="link-chip" href="https://pam.fi" target="_blank">PAM (профсоюз)</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <span data-i18n="w_housing_h">Жильё</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="w_housing_p1">Аренда защищена <em>Laki asuinhuoneiston vuokrauksesta 481/1995</em>. Залог — не более 3 месяцев аренды. Всегда заключай письменный договор.</p>
+      <p data-i18n="w_housing_p2">При низком доходе — подай на <strong>yleinen asumistuki</strong> (общее жилищное пособие) в KELA. При изменении дохода на более чем 400 €/мес — сообщи в KELA в течение месяца.</p>
+      <p data-i18n="w_housing_p3">ARA-жильё (субсидированное) — обратись в муниципальное жилищное бюро. В Кайнуу: Kajaanin kaupungin asuntotoimisto.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://vuokraovi.com" target="_blank">Vuokraovi.com</a>
+        <a class="link-chip" href="https://oikotie.fi/vuokra-asunnot" target="_blank">Oikotie.fi</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <span data-i18n="w_lang_h">Язык и интеграция</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="w_lang_p1">После регистрации в DVV и муниципалитете — оцени право на <strong>kotoutumiskoulutus</strong> (интеграционный курс финского, бесплатно через TE-toimisto или муниципалитет, реформа KOTO24 с 1.1.2025).</p>
+      <p data-i18n="w_lang_p2">Kotoutumissuunnitelma (интеграционный план) составляется вместе с муниципалитетом в первый год. Включает языковые курсы, ориентацию и поиск работы.</p>
+      <p data-i18n="w_lang_p3">В Кайнуу: KAIKO (Kainuun Aikuiskoulutuskeskus) — основной провайдер курсов финского для взрослых.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://infofinland.fi" target="_blank">InfoFinland.fi (русский)</a>
+        <a class="link-chip" href="https://kaiko.fi" target="_blank">KAIKO</a>
+        <a class="link-chip" href="https://suomi.fi" target="_blank">Suomi.fi</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <span data-i18n="w_kids_h">Дети — детсад и школа</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="w_kids_p1">Подай заявку на <strong>päiväkoti</strong> (детский сад) за 4 месяца до желаемой даты; при внезапном трудоустройстве — минимум за 2 недели. Муниципалитет обязан предоставить место.</p>
+      <p data-i18n="w_kids_p2">Школа обязательная с 7 лет. Дети с недостаточным финским начинают с <strong>valmistava opetus</strong> (подготовительный класс, ~1 год).</p>
+      <p data-i18n="w_kids_p3">В Кайнуу записывайся через sivistystoimi (образовательный отдел Kajaani). При детях проверь право на lapsilisä (детское пособие) через KELA.</p>
+    </div>
+  </details>
+
+  <div class="contact-block">
+    <h3 data-i18n="contact_h">Будь собой — откройся в HARMONY</h3>
+    <p class="cb-sub" data-i18n="contact_sub">Общественная организация в Финляндии, объединяющая людей разных культур для интеграции, саморазвития и творчества</p>
+    <div class="contact-links">
+      <a class="contact-link outline" href="https://t.me/harmony_life_ry_bot/site" target="_blank" rel="noopener" data-i18n="contact_btn">Познакомиться с нами</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== БЕЖЕНЕЦ ===== -->
+<div class="tab-panel" id="tab-refugee">
+
+  <div class="checklist-box">
+    <h2>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span data-i18n="r_check_h">Первые 30 дней — чеклист</span>
+    </h2>
+    <ol class="checklist">
+      <li data-i18n="r_c1">Заявить о защите полиции / погранслужбе / Migri (making)</li>
+      <li data-i18n="r_c2">В течение 5 дней зарегистрировать заявление, сдать биометрию (registering)</li>
+      <li data-i18n="r_c3">Заселиться в назначенный vastaanottokeskus (центр приёма)</li>
+      <li data-i18n="r_c4">В течение 21 дня подать заявление в Migri (lodging)</li>
+      <li data-i18n="r_c5">Подать заявление на vastaanottoraha в своём центре приёма</li>
+      <li data-i18n="r_c6">Оформить детям место в valmistava opetus / школе</li>
+      <li data-i18n="r_c7">Получить медпомощь через центр приёма</li>
+      <li data-i18n="r_c8">При наличии паспорта — право на работу через 3 мес.; без паспорта — через 6 мес.</li>
+    </ol>
+  </div>
+
+  <div class="agencies">
+    <h3 data-i18n="agencies_h">Ключевые ведомства</h3>
+    <div class="agency-grid">
+      <div class="agency"><div class="name">Migri</div><div class="desc" data-i18n="ag_migri_r">Убежище, решение</div><a href="https://migri.fi" target="_blank">migri.fi</a></div>
+      <div class="agency"><div class="name">Vastaanottokeskus</div><div class="desc" data-i18n="ag_vok">Центр приёма</div><a href="https://migri.fi" target="_blank">migri.fi</a></div>
+      <div class="agency"><div class="name">DVV</div><div class="desc" data-i18n="ag_dvv_r">После статуса: регистрация</div><a href="https://dvv.fi" target="_blank">dvv.fi</a></div>
+      <div class="agency"><div class="name">KELA</div><div class="desc" data-i18n="ag_kela_r">После статуса: пособия</div><a href="https://kela.fi" target="_blank">kela.fi</a></div>
+      <div class="agency"><div class="name">Vero</div><div class="desc" data-i18n="ag_vero_r">Налоговая карта при работе</div><a href="https://vero.fi" target="_blank">vero.fi</a></div>
+      <div class="agency"><div class="name">InfoFinland</div><div class="desc" data-i18n="ag_info30">На 30+ языках</div><a href="https://infofinland.fi" target="_blank">infofinland.fi</a></div>
+    </div>
+  </div>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <span data-i18n="r_proc_h">Процедура убежища — 3 шага (Пакт ЕС с 12.06.2026)</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <div class="warn"><span data-i18n="r_proc_w">С 12 июня 2026 действует новая процедура ЕС. Сроки строгие — пропуск этапа лишает рассмотрения!</span></div>
+      <p data-i18n="r_proc_p1"><strong>Шаг 1 — Making (Screening):</strong> Сообщить полиции, погранслужбе, Migri или центру приёма о желании защиты. Проходит первичная проверка (скрининг) — 3–7 дней в центре приёма.</p>
+      <p data-i18n="r_proc_p2"><strong>Шаг 2 — Registering:</strong> Явиться лично в течение <strong>5 дней</strong> — снятие биометрии, проверка личности.</p>
+      <p data-i18n="r_proc_p3"><strong>Шаг 3 — Lodging:</strong> Подать заявление в Migri в течение <strong>21 дня</strong> после регистрации. Migri назначает встречу.</p>
+      <p data-i18n="r_proc_p4">Далее — <strong>turvapaikkapuhuttelu</strong> (собеседование об убежище) и решение Migri.</p>
+      <div class="highlight"><span data-i18n="r_proc_hi">Сроки защиты с 2025: убежище — 3 года; доп. защита — 1 год (первый) / 2 года (продление). Защита временная, Migri пересматривает регулярно. Квота переселения 2026: 500 человек.</span></div>
+      <div class="warn"><span data-i18n="r_border_w">Граница Россия–Финляндия закрыта (по состоянию на сентябрь 2026). Въезд через Россию невозможен. Используйте легальные маршруты через другие страны ЕС.</span></div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+      <span data-i18n="r_allow_h">Vastaanottoraha — пособие приёма 2026</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="r_allow_p1">Выплачивается центром приёма пока идёт рассмотрение (не KELA).</p>
+      <div class="highlight"><span data-i18n="r_allow_hi">Одинокий взрослый: <span class="price-tag">300 €/мес</span> (без питания) · <span class="price-tag">88 €/мес</span> (с питанием в центре)</span></div>
+      <ul>
+        <li data-i18n="r_allow_l1">Другие взрослые в семье: 254 € / 72 €</li>
+        <li data-i18n="r_allow_l2">Одинокий родитель: 336 € / 97 €</li>
+        <li data-i18n="r_allow_l3">Дети 10–17 лет: 210 € / 60 €</li>
+        <li data-i18n="r_allow_l4">Дети до 10 лет: 191 € / 57 €</li>
+      </ul>
+      <div class="warn"><span data-i18n="r_allow_w">С 1 марта 2026: весь заработок полностью уменьшает пособие (вычет 150 € отменён).</span></div>
+      <p data-i18n="r_allow_p2">Проживание в vastaanottokeskus бесплатно.</p>
+      <p data-i18n="r_allow_p3"><strong>Täydentävä vastaanottoraha</strong> (дополнительное пособие) — для особых нужд: рецептурные лекарства, очки, специальное питание. Запрашивать через центр приёма.</p>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.67 3.36a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <span data-i18n="r_med_h">Медицина</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="r_med_p1">Во время рассмотрения — медпомощь через <strong>vastaanottokeskus</strong>: для взрослых — необходимая помощь; для детей и беременных — полная медицинская помощь.</p>
+      <p data-i18n="r_med_p2">После получения статуса — переход к hyvinvointialue (региональный орган здравоохранения). В ряде округов есть специальные Immigrant Health Services на первые 3 года.</p>
+      <p data-i18n="r_med_p3"><strong>Психологическая поддержка:</strong> SPR (Punainen Risti / Красный Крест Финляндии) оказывает поддержку беженцам. В Кайнуу — Kainuun hyvinvointialue, отдел maahanmuuttajapalvelut.</p>
+      <p data-i18n="r_med_p4"><strong>Экстренная помощь всегда:</strong> 112</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://www.punainenristi.fi" target="_blank">SPR / Punainen Risti</a>
+        <a class="link-chip" href="https://kainuunhyvinvointialue.fi" target="_blank">Kainuun hyvinvointialue</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6l2 2-2 2M8 6l-2 2 2 2"/></svg></div>
+      <span data-i18n="r_work_h">Работа во время рассмотрения</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <div class="highlight"><span data-i18n="r_work_hi">С паспортом: право на работу через <span class="price-tag">3 мес.</span> · Без паспорта: через <span class="price-tag">6 мес.</span></span></div>
+      <p data-i18n="r_work_p1">Право на работу неограниченное по отрасли. При трудоустройстве — оформить verokortti через OmaVero (нужен henkilötunnus, присваивается при регистрации заявления).</p>
+      <div class="warn"><span data-i18n="r_work_w">Весь заработок полностью уменьшает vastaanottoraha (с марта 2026 вычет 150 € отменён).</span></div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <span data-i18n="r_after_h">После получения статуса</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="r_after_p1">После положительного решения Migri — немедленно оформляй <strong>kotikunta</strong> через DVV и переходи в систему <strong>KELA</strong> (Kela-kortti, asumistuki, toimeentulotuki, детские пособия).</p>
+      <p data-i18n="r_after_p2">Муниципалитет составляет <strong>kotoutumissuunnitelma</strong> (интеграционный план) и направляет на <strong>kotoutumiskoulutus</strong> (бесплатные курсы финского).</p>
+      <p data-i18n="r_after_p3">Банковский счёт: S-Pankki наиболее доступен — паспорт/ВНЖ + henkilötunnus + адрес.</p>
+      <p data-i18n="r_after_p4">Kotoutumistuki (интеграционное пособие) — выплачивается через KELA до 3 лет. Заменяет toimeentulotuki в период интеграции.</p>
+      <div class="link-row">
+        <a class="link-chip" href="https://infofinland.fi/ru" target="_blank">InfoFinland на русском</a>
+        <a class="link-chip" href="https://migri.fi" target="_blank">Migri.fi</a>
+        <a class="link-chip" href="https://kela.fi" target="_blank">Kela.fi</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="section">
+    <summary>
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <span data-i18n="r_kids_h">Дети — образование</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="section-body">
+      <p data-i18n="r_kids_p1">Дети ищущих убежища имеют <strong>право</strong> на бесплатное образование (peruskoulut) независимо от статуса заявления.</p>
+      <p data-i18n="r_kids_p2">Начинают с <strong>valmistava opetus</strong> — подготовительного класса (~1 год, финский язык и интеграция в учебную среду).</p>
+      <p data-i18n="r_kids_p3">Право на образование есть даже без kotikunta. Обратись в муниципальный образовательный отдел (sivistystoimi).</p>
+    </div>
+  </details>
+
+  <div class="contact-block">
+    <h3 data-i18n="contact_h">Будь собой — откройся в HARMONY</h3>
+    <p class="cb-sub" data-i18n="contact_sub">Общественная организация в Финляндии, объединяющая людей разных культур для интеграции, саморазвития и творчества</p>
+    <div class="contact-links">
+      <a class="contact-link outline" href="https://t.me/harmony_life_ry_bot/site" target="_blank" rel="noopener" data-i18n="contact_btn">Познакомиться с нами</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p data-i18n="footer_note">Информация актуальна на октябрь 2026. Всегда сверяй данные с официальными сайтами.</p>
+  <p style="margin-top:8px;"><a href="https://migri.fi">migri.fi</a> · <a href="https://kela.fi">kela.fi</a> · <a href="https://vero.fi">vero.fi</a> · <a href="https://dvv.fi">dvv.fi</a> · <a href="https://infofinland.fi">infofinland.fi</a> · <a href="https://kaiko.fi">kaiko.fi</a></p>
+  <p style="margin-top:16px;">© 2026 <a href="https://t.me/harmony_life_ry_bot/site" target="_blank" rel="noopener">Harmony Life Ry</a> · Kajaani, Suomi · Y-tunnus 3525913-5</p>
+</footer>
+
+<script>
+var T={
+ru:{
+  h1:"Гид новосёла Финляндии",
+  sub:"Пошаговое руководство для тех, кто только приехал — документы, банк, KELA, медицина и жильё",
+  badge:"Актуально · Октябрь 2026",
+  tab_student:"Студент",tab_worker:"Работник",tab_refugee:"Беженец",
+  agencies_h:"Ключевые ведомства",
+  ag_migri:"ВНЖ, Enter Finland",ag_dvv:"Регистрация, henkilötunnus",ag_vero:"Налоговая карта, OmaVero",
+  ag_kela:"Соцстрахование",ag_yths:"Студенческая медицина",ag_info:"На русском языке",
+  ag_migri_w:"ВНЖ работника (TTOL)",ag_kela_w:"Соцстрахование, Kela-kortti",ag_te:"Биржа труда",
+  ag_migri_r:"Убежище, решение",ag_vok:"Центр приёма",ag_dvv_r:"После статуса: регистрация",
+  ag_kela_r:"После статуса: пособия",ag_vero_r:"Налоговая карта при работе",ag_info30:"На 30+ языках",
+  s_check_h:"Первые 30 дней — чеклист",
+  s_c1:"Получить oleskelulupakortti (карту ВНЖ) или подтвердить решение Migri",
+  s_c2:"Явиться в DVV лично: henkilötunnus + kotikunta + зарегистрировать адрес",
+  s_c3:"Открыть банковский счёт (S-Pankki, Nordea или OP)",
+  s_c4:"Оформить verokortti в OmaVero, если планируешь работать",
+  s_c5:"Зарегистрироваться в университете, получить студенческий и доступ к YTHS",
+  s_c6:"Проверить право на KELA (opintotuki обычно недоступен, но уточни)",
+  s_c7:"Настроить Suomi.fi и OmaKanta",
+  s_c8:"Оформить проездной и финскую SIM-карту",
+  s_vnj_h:"ВНЖ и документы",
+  s_fee_2026:"Пошлина 2026: <span class='price-tag'>600 €</span> онлайн · <span class='price-tag'>750 €</span> бумажно",
+  s_vnj_p1:"Подавать через <strong>Enter Finland</strong> (enterfinland.fi) минимум за 3 месяца до начала программы.",
+  s_docs_h:"<strong>Что взять с собой:</strong>",
+  s_d1:"Действующий паспорт",s_d2:"Безусловное письмо о зачислении",
+  s_d3:"Подтверждение средств: минимум <strong>9 600 €</strong> (800 €/мес × 12) на счёте",
+  s_d4:"Медицинская страховка",s_d5:"Подтверждение жилья",
+  s_vnj_w1:"Стипендия вычитается из требуемой суммы. Если стипендия 2 000 € — нужно 7 600 € на счёте. Доход от работы за первый год НЕ засчитывается.",
+  s_vnj_p2:"<strong>Сроки 2026:</strong> 82% положительных решений — за 30 дней и менее.",
+  s_vnj_p3:"После решения Migri — явиться в <strong>DVV</strong> лично: зарегистрировать henkilötunnus, kotikunta и адрес. Henkilötunnus часто присваивается уже вместе с решением Migri.",
+  s_vnj_p4:"<strong>Продление (jatkolupa):</strong> подавать за 3 мес. до истечения. Требуется не менее <strong>45 ECTS</strong> за учебный год. Не набрал кредиты — обоснуй причины письменно.",
+  s_vnj_p5:"<strong>Постоянный ВНЖ (с 8 января 2026):</strong> 6 лет + уровень B1, или 4 года при доходе более <strong>40 000 €/год</strong>.",
+  s_vnj_p6:"<strong>После учёбы — поиск работы:</strong> työnhakija-oleskelulupa на 12 месяцев (возможно продление до 24 мес.).",
+  s_bank_h:"Банковский счёт",
+  s_bank_p1:"Нужен henkilötunnus. Открытие только лично в Финляндии. Документы: паспорт, henkilötunnus, адрес, ВНЖ.",
+  s_bank_l1:"<strong>S-Pankki</strong> — принимает иностранцев, без записи, карта ~1 месяц",
+  s_bank_l2:"<strong>Nordea</strong> — паспорт + henkilötunnus, запись обязательна",
+  s_bank_l3:"<strong>OP</strong> — нужна запись; для non-EU может понадобиться финская ID-карта",
+  s_bank_p2:"<strong>Альтернативы:</strong> Wise, Revolut, Bunq, Holvi — европейский IBAN без henkilötunnus.",
+  s_vero_h:"Налоговая карта (verokortti)",
+  s_vero_w:"Без verokortti работодатель удержит 60% зарплаты!",
+  s_vero_p1:"Оформить через <strong>OmaVero</strong> на vero.fi. С ноября 2025 карты только цифровые.",
+  s_vero_p2:"Студент может работать до <strong>30 ч/нед</strong> (≤ 1 560 ч/год). Практика в рамках учебного плана не засчитывается в лимит.",
+  s_kela_h:"KELA и медицина",
+  s_kela_p1:"Студент без постоянного проживания обычно <strong>не получает</strong> пособие KELA. Исключение: работа ≥ 10 ч/нед стабильно 4+ месяца.",
+  s_kela_p2:"<strong>YTHS</strong> (студенческая поликлиника): профилактика, врач, психолог. Регистрация на yths.fi.",
+  s_kela_p3:"В Кайнуу: скорая — Kainuun hyvinvointialue. Экстренная: 112.",
+  s_housing_h:"Жильё",
+  s_housing_p1:"Студенческие фонды: <strong>HOAS</strong> (Хельсинки), <strong>TOAS</strong> (Тампере), <strong>POAS</strong> (Оулу).",
+  s_housing_p2:"В Кайнуу: Kainuun Opiskelija-asunnot. Объявления на Vuokraovi.com и Oikotie.fi.",
+  s_housing_p3:"Закон <em>Laki asuinhuoneiston vuokrauksesta 481/1995</em>: залог ≤ 3 мес. аренды, письменный договор обязателен.",
+  s_housing_p4:"<strong>ARA-жильё</strong> — субсидированное. Kajaanin kaupungin asuntotoimisto.",
+  s_lang_h:"Язык и интеграция",
+  s_lang_hi:"Начни учить финский с первого семестра — уровень B1 нужен для постоянного ВНЖ.",
+  s_lang_p1:"Для постоянного ВНЖ (с 8 января 2026) нужен уровень <strong>B1 + 6 лет</strong>, или доход > 40 000 €/год + 4 года.",
+  s_lang_p2:"Kotoutumiskoulutus — в основном для безработных. Студентам очной формы обычно недоступен.",
+  s_lang_p3:"В Кайнуу: KAIKO и библиотеки Kajaani предлагают бесплатные курсы финского.",
+  w_check_h:"Первые 30 дней — чеклист",
+  w_c1:"Получить oleskelulupakortti (карту ВНЖ)",
+  w_c2:"DVV: henkilötunnus + kotikunta + зарегистрировать адрес",
+  w_c3:"Открыть банковский счёт (S-Pankki, Nordea, OP)",
+  w_c4:"Оформить verokortti в OmaVero до первой зарплаты (иначе 60%!)",
+  w_c5:"Подать «Moving to Finland» в KELA и получить Kela-kortti",
+  w_c6:"Проверить трудовой договор; вступить в профсоюз и кассу безработицы",
+  w_c7:"Записаться на производственное здравоохранение (työterveyshuolto)",
+  w_c8:"Suomi.fi идентификация, OmaKanta; при детях — päiväkoti/школа",
+  w_vnj_h:"ВНЖ работника (TTOL)",
+  w_fee:"Пошлина 2026: <span class='price-tag'>750 €</span> онлайн · <span class='price-tag'>950 €</span> бумажно",
+  w_vnj_p1:"Подаётся через <strong>Enter Finland</strong>. Работодатель дополняет заявление условиями труда.",
+  w_vnj_w1:"Специалист (зарплата ≥ 3 937 €/мес): fast-track, решение за 2 недели, пошлина 530 € онлайн.",
+  w_vnj_p2:"<strong>Сроки 2026:</strong> в среднем <strong>17 дней</strong> (данные июль 2026).",
+  w_vnj_p3:"После решения — DVV лично для henkilötunnus и kotikunta.",
+  w_vnj_p4:"<strong>Постоянный ВНЖ (с 8 января 2026):</strong> 6 лет + B1 + 2 года стажа, или 4 года при доходе > 40 000 €/год.",
+  w_kela_h:"KELA и социальные пособия",
+  w_kela_hi:"Работник застрахован в KELA с первого дня работы при зарплате ≥ 800,02 €/мес",
+  w_kela_p1:"Подать «Moving to Finland» в Kela. Альтернативно через <strong>International House Helsinki</strong> (ihhelsinki.fi).",
+  w_kela_p2:"<strong>Asumistuki (жилищное пособие):</strong> при низком доходе.",
+  w_kela_p3:"<strong>Toimeentulotuki:</strong> базовая сумма <span class='price-tag'>578,43 €/мес</span> (с марта 2026).",
+  w_kela_p4:"<strong>Медицина:</strong> через работодателя (työterveyshuolto). В Кайнуу — Kainuun hyvinvointialue. Экстренная: 112.",
+  w_vero_h:"Налоговая карта и зарплата",
+  w_vero_w:"Без verokortti работодатель удержит 60% — оформи до первой зарплаты!",
+  w_vero_p1:"OmaVero (vero.fi) — вход по банковским кодам. Карта только цифровая (с ноября 2025).",
+  w_vero_p2:"Одна карта действует для всех работодателей одновременно.",
+  w_vero_p3:"При доходе вне Финляндии — проконсультируйся о нерезидентском налогообложении.",
+  w_rights_h:"Работа и права",
+  w_rights_p1:"Трудовой договор (työsopimus) — минимальные права по <strong>TES</strong> (коллективному договору отрасли).",
+  w_rights_p2:"Оплачиваемый отпуск: 2,5 дня за каждый полный рабочий месяц (при стаже > 1 года).",
+  w_rights_p3:"<strong>Профсоюзы:</strong> PAM, SAK, AKT. Членство в <strong>кассе безработицы (työttömyyskassa)</strong> даёт повышенное пособие.",
+  w_housing_h:"Жильё",
+  w_housing_p1:"Закон аренды 481/1995: залог ≤ 3 мес. аренды, письменный договор обязателен.",
+  w_housing_p2:"При низком доходе — <strong>yleinen asumistuki</strong> (KELA). При изменении дохода на > 400 €/мес — сообщи в KELA.",
+  w_housing_p3:"ARA-жильё: Kajaanin kaupungin asuntotoimisto.",
+  w_lang_h:"Язык и интеграция",
+  w_lang_p1:"Право на <strong>kotoutumiskoulutus</strong> (курс финского, бесплатно через TE-toimisto, реформа KOTO24 с 1.1.2025).",
+  w_lang_p2:"Kotoutumissuunnitelma составляется с муниципалитетом в первый год: языковые курсы, ориентация, поиск работы.",
+  w_lang_p3:"В Кайнуу: KAIKO — основной провайдер курсов финского для взрослых.",
+  w_kids_h:"Дети — детсад и школа",
+  w_kids_p1:"Подай заявку на <strong>päiväkoti</strong> за 4 месяца; при внезапном трудоустройстве — за 2 недели.",
+  w_kids_p2:"Школа обязательная с 7 лет. Дети с недостаточным финским — <strong>valmistava opetus</strong> (~1 год).",
+  w_kids_p3:"В Кайнуу: sivistystoimi Kajaani. Проверь право на lapsilisä (детское пособие) через KELA.",
+  r_check_h:"Первые 30 дней — чеклист",
+  r_c1:"Заявить о защите полиции / погранслужбе / Migri (making)",
+  r_c2:"В течение 5 дней зарегистрировать заявление, сдать биометрию (registering)",
+  r_c3:"Заселиться в назначенный vastaanottokeskus (центр приёма)",
+  r_c4:"В течение 21 дня подать заявление в Migri (lodging)",
+  r_c5:"Подать заявление на vastaanottoraha в своём центре приёма",
+  r_c6:"Оформить детям место в valmistava opetus / школе",
+  r_c7:"Получить медпомощь через центр приёма",
+  r_c8:"С паспортом — право на работу через 3 мес.; без паспорта — через 6 мес.",
+  r_proc_h:"Процедура убежища — 3 шага (Пакт ЕС с 12.06.2026)",
+  r_proc_w:"С 12 июня 2026 действует новая процедура ЕС. Сроки строгие — пропуск этапа лишает рассмотрения!",
+  r_proc_p1:"<strong>Шаг 1 — Making (Screening):</strong> Сообщить о желании защиты. Первичная проверка (скрининг) — 3–7 дней.",
+  r_proc_p2:"<strong>Шаг 2 — Registering:</strong> Явиться лично в течение <strong>5 дней</strong> — биометрия, проверка личности.",
+  r_proc_p3:"<strong>Шаг 3 — Lodging:</strong> Подать заявление в Migri в течение <strong>21 дня</strong>.",
+  r_proc_p4:"Далее — <strong>turvapaikkapuhuttelu</strong> (собеседование) и решение Migri.",
+  r_proc_hi:"Сроки защиты с 2025: убежище — 3 года; доп. защита — 1/2 года. Квота переселения 2026: 500 человек.",
+  r_border_w:"Граница Россия–Финляндия закрыта (сентябрь 2026). Въезд через Россию невозможен.",
+  r_allow_h:"Vastaanottoraha — пособие приёма 2026",
+  r_allow_p1:"Выплачивается центром приёма пока идёт рассмотрение (не KELA).",
+  r_allow_hi:"Одинокий взрослый: <span class='price-tag'>300 €/мес</span> (без питания) · <span class='price-tag'>88 €/мес</span> (с питанием)",
+  r_allow_l1:"Другие взрослые в семье: 254 € / 72 €",r_allow_l2:"Одинокий родитель: 336 € / 97 €",
+  r_allow_l3:"Дети 10–17 лет: 210 € / 60 €",r_allow_l4:"Дети до 10 лет: 191 € / 57 €",
+  r_allow_w:"С 1 марта 2026: весь заработок полностью уменьшает пособие (вычет 150 € отменён).",
+  r_allow_p2:"Проживание в vastaanottokeskus бесплатно.",
+  r_allow_p3:"<strong>Täydentävä vastaanottoraha</strong> — для особых нужд: рецептурные лекарства, очки. Запрашивать через центр приёма.",
+  r_med_h:"Медицина",
+  r_med_p1:"Во время рассмотрения: для взрослых — необходимая помощь; для детей и беременных — полная.",
+  r_med_p2:"После статуса — hyvinvointialue. В ряде округов Immigrant Health Services на первые 3 года.",
+  r_med_p3:"<strong>Психологическая поддержка:</strong> SPR (Punainen Risti). В Кайнуу — Kainuun hyvinvointialue.",
+  r_med_p4:"<strong>Экстренная помощь всегда:</strong> 112",
+  r_work_h:"Работа во время рассмотрения",
+  r_work_hi:"С паспортом: право на работу через <span class='price-tag'>3 мес.</span> · Без паспорта: через <span class='price-tag'>6 мес.</span>",
+  r_work_p1:"Право на работу неограниченное. verokortti через OmaVero (нужен henkilötunnus).",
+  r_work_w:"Весь заработок полностью уменьшает vastaanottoraha (с марта 2026 вычет 150 € отменён).",
+  r_after_h:"После получения статуса",
+  r_after_p1:"После решения Migri — оформляй <strong>kotikunta</strong> через DVV и переходи в <strong>KELA</strong>.",
+  r_after_p2:"Муниципалитет составляет <strong>kotoutumissuunnitelma</strong> и направляет на курсы финского.",
+  r_after_p3:"Банковский счёт: S-Pankki наиболее доступен — паспорт/ВНЖ + henkilötunnus + адрес.",
+  r_after_p4:"Kotoutumistuki — выплачивается через KELA до 3 лет. Заменяет toimeentulotuki в период интеграции.",
+  r_kids_h:"Дети — образование",
+  r_kids_p1:"Дети ищущих убежища имеют <strong>право</strong> на бесплатное образование независимо от статуса.",
+  r_kids_p2:"Начинают с <strong>valmistava opetus</strong> — подготовительного класса (~1 год).",
+  r_kids_p3:"Право есть даже без kotikunta. Обратись в sivistystoimi.",
+  contact_h:"Будь собой — откройся в HARMONY",
+  contact_sub:"Общественная организация в Финляндии, объединяющая людей разных культур для интеграции, саморазвития и творчества",
+  contact_btn:"Познакомиться с нами",
+  footer_note:"Информация актуальна на октябрь 2026. Всегда сверяй данные с официальными сайтами."
+},
+ua:{
+  h1:"Путівник новосела Фінляндії",
+  sub:"Покроковий посібник для тих, хто щойно приїхав — документи, банк, KELA, медицина та житло",
+  badge:"Актуально · Жовтень 2026",
+  tab_student:"Студент",tab_worker:"Працівник",tab_refugee:"Біженець",
+  agencies_h:"Ключові відомства",
+  ag_migri:"ВНЖ, Enter Finland",ag_dvv:"Реєстрація, henkilötunnus",ag_vero:"Податкова картка",
+  ag_kela:"Соцстрахування",ag_yths:"Студентська медицина",ag_info:"Російською мовою",
+  ag_migri_w:"ВНЖ працівника (TTOL)",ag_kela_w:"Соцстрахування, Kela-kortti",ag_te:"Біржа праці",
+  ag_migri_r:"Притулок, рішення",ag_vok:"Центр прийому",ag_dvv_r:"Після статусу: реєстрація",
+  ag_kela_r:"Після статусу: допомоги",ag_vero_r:"Податкова картка при роботі",ag_info30:"30+ мовами",
+  s_check_h:"Перші 30 днів — чекліст",
+  s_c1:"Отримати oleskelulupakortti (картку ВНЖ) або підтвердити рішення Migri",
+  s_c2:"Звернутись до DVV особисто: henkilötunnus + kotikunta + зареєструвати адресу",
+  s_c3:"Відкрити банківський рахунок (S-Pankki, Nordea або OP)",
+  s_c4:"Оформити verokortti в OmaVero, якщо плануєш працювати",
+  s_c5:"Зареєструватись в університеті, отримати студентський квиток і доступ до YTHS",
+  s_c6:"Перевірити право на KELA (opintotuki зазвичай недоступне, але уточни)",
+  s_c7:"Налаштувати Suomi.fi та OmaKanta",
+  s_c8:"Оформити проїзний і фінську SIM-картку",
+  s_vnj_h:"ВНЖ і документи",
+  s_fee_2026:"Мито 2026: <span class='price-tag'>600 €</span> онлайн · <span class='price-tag'>750 €</span> паперово",
+  s_vnj_p1:"Подавати через <strong>Enter Finland</strong> (enterfinland.fi) щонайменше за 3 місяці до початку програми.",
+  s_docs_h:"<strong>Що взяти з собою:</strong>",
+  s_d1:"Чинний паспорт",s_d2:"Безумовний лист про зарахування",
+  s_d3:"Підтвердження коштів: щонайменше <strong>9 600 €</strong> (800 €/міс × 12)",
+  s_d4:"Медична страховка",s_d5:"Підтвердження житла",
+  s_vnj_w1:"Стипендія вираховується з необхідної суми. Якщо стипендія 2 000 € — потрібно 7 600 € на рахунку.",
+  s_vnj_p2:"<strong>Терміни 2026:</strong> 82% позитивних рішень — за 30 днів і менше.",
+  s_vnj_p3:"Після рішення Migri — звернутись до <strong>DVV</strong> особисто. Henkilötunnus часто присвоюється разом із рішенням Migri.",
+  s_vnj_p4:"<strong>Продовження (jatkolupa):</strong> потрібно не менше <strong>45 ECTS</strong> за навчальний рік.",
+  s_vnj_p5:"<strong>Постійний ВНЖ (з 8 січня 2026):</strong> 6 років + B1, або 4 роки при доході > <strong>40 000 €/рік</strong>.",
+  s_vnj_p6:"<strong>Після навчання — пошук роботи:</strong> työnhakija-oleskelulupa на 12 місяців (до 24 міс.).",
+  s_bank_h:"Банківський рахунок",
+  s_bank_p1:"Потрібен henkilötunnus. Відкриття лише особисто у Фінляндії.",
+  s_bank_l1:"<strong>S-Pankki</strong> — приймає іноземців, без запису",
+  s_bank_l2:"<strong>Nordea</strong> — паспорт + henkilötunnus, запис обов'язковий",
+  s_bank_l3:"<strong>OP</strong> — потрібен запис; для non-EU може знадобитись фінська ID-картка",
+  s_bank_p2:"<strong>Альтернативи:</strong> Wise, Revolut, Bunq — європейський IBAN без henkilötunnus.",
+  s_vero_h:"Податкова картка (verokortti)",
+  s_vero_w:"Без verokortti роботодавець утримає 60% зарплати!",
+  s_vero_p1:"Оформити через <strong>OmaVero</strong> на vero.fi. З листопада 2025 картки лише цифрові.",
+  s_vero_p2:"Студент може працювати до <strong>30 год/тиж</strong>. Практика за навчальним планом не зараховується в ліміт.",
+  s_kela_h:"KELA та медицина",
+  s_kela_p1:"Студент без постійного проживання зазвичай <strong>не отримує</strong> допомогу KELA.",
+  s_kela_p2:"<strong>YTHS</strong> — студентська поліклініка: профілактика, лікар, психолог.",
+  s_kela_p3:"У Кайнуу: швидка — Kainuun hyvinvointialue. Екстрена: 112.",
+  s_housing_h:"Житло",
+  s_housing_p1:"Студентські фонди: <strong>HOAS</strong>, <strong>TOAS</strong>, <strong>POAS</strong>.",
+  s_housing_p2:"У Кайнуу: Kainuun Opiskelija-asunnot. Оголошення на Vuokraovi.com.",
+  s_housing_p3:"Закон 481/1995: застава ≤ 3 міс. оренди, письмовий договір обов'язковий.",
+  s_housing_p4:"<strong>ARA-житло</strong> — субсидоване. Kajaanin kaupungin asuntotoimisto.",
+  s_lang_h:"Мова та інтеграція",
+  s_lang_hi:"Починай вчити фінську з першого семестру — рівень B1 потрібен для постійного ВНЖ.",
+  s_lang_p1:"Постійний ВНЖ (з 8 січня 2026): <strong>B1 + 6 років</strong>, або дохід > 40 000 €/рік + 4 роки.",
+  s_lang_p2:"Kotoutumiskoulutus — здебільшого для безробітних. Студентам денної форми зазвичай недоступне.",
+  s_lang_p3:"У Кайнуу: KAIKO та бібліотеки Kajaani пропонують безкоштовні курси фінської.",
+  w_check_h:"Перші 30 днів — чекліст",
+  w_c1:"Отримати oleskelulupakortti",w_c2:"DVV: henkilötunnus + kotikunta + зареєструвати адресу",
+  w_c3:"Відкрити банківський рахунок",w_c4:"Оформити verokortti до першої зарплати (інакше 60%!)",
+  w_c5:"Подати «Moving to Finland» до KELA",w_c6:"Перевірити трудовий договір; вступити до профспілки",
+  w_c7:"Записатись на виробничу охорону здоров'я (työterveyshuolto)",
+  w_c8:"Suomi.fi ідентифікація, OmaKanta; при дітях — päiväkoti/школа",
+  w_vnj_h:"ВНЖ працівника (TTOL)",
+  w_fee:"Мито 2026: <span class='price-tag'>750 €</span> онлайн · <span class='price-tag'>950 €</span> паперово",
+  w_vnj_p1:"Подається через <strong>Enter Finland</strong>. Роботодавець доповнює умовами праці.",
+  w_vnj_w1:"Спеціаліст (зарплата ≥ 3 937 €/міс): fast-track, рішення за 2 тижні, мито 530 €.",
+  w_vnj_p2:"<strong>Терміни 2026:</strong> в середньому <strong>17 днів</strong>.",
+  w_vnj_p3:"Після рішення — DVV особисто для henkilötunnus та kotikunta.",
+  w_vnj_p4:"<strong>Постійний ВНЖ (з 8 січня 2026):</strong> 6 років + B1 + 2 роки стажу, або 4 роки при доході > 40 000 €/рік.",
+  w_kela_h:"KELA та соціальні допомоги",
+  w_kela_hi:"Працівник застрахований у KELA з першого дня роботи при зарплаті ≥ 800,02 €/міс",
+  w_kela_p1:"Подати «Moving to Finland» у Kela. Альтернативно через <strong>International House Helsinki</strong>.",
+  w_kela_p2:"<strong>Asumistuki (житлова допомога):</strong> при низькому доході.",
+  w_kela_p3:"<strong>Toimeentulotuki:</strong> базова сума <span class='price-tag'>578,43 €/міс</span> (з березня 2026).",
+  w_kela_p4:"<strong>Медицина:</strong> через роботодавця (työterveyshuolto). У Кайнуу — Kainuun hyvinvointialue. Екстрена: 112.",
+  w_vero_h:"Податкова картка та зарплата",
+  w_vero_w:"Без verokortti роботодавець утримає 60% — оформи до першої зарплати!",
+  w_vero_p1:"OmaVero (vero.fi). Картка лише цифрова (з листопада 2025).",
+  w_vero_p2:"Одна картка діє для всіх роботодавців одночасно.",
+  w_vero_p3:"При доході поза Фінляндією — проконсультуйся про нерезидентське оподаткування.",
+  w_rights_h:"Робота та права",
+  w_rights_p1:"Трудовий договір (työsopimus) — мінімальні права за <strong>TES</strong> (колективним договором галузі).",
+  w_rights_p2:"Оплачувана відпустка: 2,5 дні за кожен повний робочий місяць (при стажі > 1 року).",
+  w_rights_p3:"<strong>Профспілки:</strong> PAM, SAK, AKT. Членство в <strong>касі безробіття</strong> дає підвищену допомогу.",
+  w_housing_h:"Житло",
+  w_housing_p1:"Закон 481/1995: застава ≤ 3 міс. оренди, письмовий договір обов'язковий.",
+  w_housing_p2:"<strong>Yleinen asumistuki</strong> (KELA) при низькому доході. При зміні доходу на > 400 €/міс — повідом KELA.",
+  w_housing_p3:"ARA-житло: Kajaanin kaupungin asuntotoimisto.",
+  w_lang_h:"Мова та інтеграція",
+  w_lang_p1:"Право на <strong>kotoutumiskoulutus</strong> (безкоштовні курси фінської, реформа KOTO24 з 1.1.2025).",
+  w_lang_p2:"Kotoutumissuunnitelma складається з муніципалітетом у перший рік.",
+  w_lang_p3:"У Кайнуу: KAIKO — основний провайдер курсів фінської для дорослих.",
+  w_kids_h:"Діти — дитсадок і школа",
+  w_kids_p1:"Подай заявку на <strong>päiväkoti</strong> за 4 місяці; при раптовому працевлаштуванні — за 2 тижні.",
+  w_kids_p2:"Школа обов'язкова з 7 років. Діти з недостатньою фінською — <strong>valmistava opetus</strong> (~1 рік).",
+  w_kids_p3:"У Кайнуу: sivistystoimi Kajaani. Перевір право на lapsilisä через KELA.",
+  r_check_h:"Перші 30 днів — чекліст",
+  r_c1:"Заявити про захист поліції / прикордонній службі / Migri (making)",
+  r_c2:"Протягом 5 днів зареєструвати заяву, здати біометрію (registering)",
+  r_c3:"Заселитися в призначений vastaanottokeskus (центр прийому)",
+  r_c4:"Протягом 21 дня подати заяву до Migri (lodging)",
+  r_c5:"Подати заяву на vastaanottoraha у своєму центрі прийому",
+  r_c6:"Влаштувати дітей у valmistava opetus / школу",
+  r_c7:"Отримати медичну допомогу через центр прийому",
+  r_c8:"З паспортом — право на роботу через 3 міс.; без паспорта — через 6 міс.",
+  r_proc_h:"Процедура притулку — 3 кроки (Пакт ЄС з 12.06.2026)",
+  r_proc_w:"З 12 червня 2026 діє нова процедура ЄС. Терміни суворі — пропуск етапу позбавляє розгляду!",
+  r_proc_p1:"<strong>Крок 1 — Making (Скринінг):</strong> Повідомити про бажання захисту. Первинна перевірка — 3–7 днів.",
+  r_proc_p2:"<strong>Крок 2 — Registering:</strong> Явитись особисто протягом <strong>5 днів</strong>.",
+  r_proc_p3:"<strong>Крок 3 — Lodging:</strong> Подати заяву до Migri протягом <strong>21 дня</strong>.",
+  r_proc_p4:"Далі — <strong>turvapaikkapuhuttelu</strong> (співбесіда) і рішення Migri.",
+  r_proc_hi:"Строки захисту з 2025: притулок — 3 роки; додатковий захист — 1/2 роки. Квота 2026: 500 осіб.",
+  r_border_w:"Кордон Росія–Фінляндія закритий (вересень 2026). В'їзд через Росію неможливий.",
+  r_allow_h:"Vastaanottoraha — допомога прийому 2026",
+  r_allow_p1:"Виплачується центром прийому під час розгляду (не KELA).",
+  r_allow_hi:"Самотній дорослий: <span class='price-tag'>300 €/міс</span> (без харчування) · <span class='price-tag'>88 €/міс</span> (з харчуванням)",
+  r_allow_l1:"Інші дорослі в сім'ї: 254 € / 72 €",r_allow_l2:"Самотній батько/мати: 336 € / 97 €",
+  r_allow_l3:"Діти 10–17 років: 210 € / 60 €",r_allow_l4:"Діти до 10 років: 191 € / 57 €",
+  r_allow_w:"З 1 березня 2026: весь заробіток повністю зменшує допомогу (відрахування 150 € скасовано).",
+  r_allow_p2:"Проживання у vastaanottokeskus безкоштовне.",
+  r_allow_p3:"<strong>Täydentävä vastaanottoraha</strong> — для особливих потреб: рецептурні ліки, окуляри.",
+  r_med_h:"Медицина",
+  r_med_p1:"Під час розгляду: для дорослих — необхідна допомога; для дітей і вагітних — повна.",
+  r_med_p2:"Після статусу — hyvinvointialue. Immigrant Health Services на перші 3 роки.",
+  r_med_p3:"<strong>Психологічна підтримка:</strong> SPR (Punainen Risti). У Кайнуу — Kainuun hyvinvointialue.",
+  r_med_p4:"<strong>Екстрена допомога завжди:</strong> 112",
+  r_work_h:"Робота під час розгляду",
+  r_work_hi:"З паспортом: право на роботу через <span class='price-tag'>3 міс.</span> · Без паспорта: через <span class='price-tag'>6 міс.</span>",
+  r_work_p1:"Право на роботу необмежене. verokortti через OmaVero (потрібен henkilötunnus).",
+  r_work_w:"Весь заробіток повністю зменшує vastaanottoraha (з березня 2026 відрахування 150 € скасовано).",
+  r_after_h:"Після отримання статусу",
+  r_after_p1:"Після рішення Migri — оформляй <strong>kotikunta</strong> через DVV і переходь до <strong>KELA</strong>.",
+  r_after_p2:"Муніципалітет складає <strong>kotoutumissuunnitelma</strong> і направляє на курси фінської.",
+  r_after_p3:"Банківський рахунок: S-Pankki — найдоступніший.",
+  r_after_p4:"Kotoutumistuki — виплачується через KELA до 3 років.",
+  r_kids_h:"Діти — освіта",
+  r_kids_p1:"Діти шукачів притулку мають <strong>право</strong> на безкоштовну освіту незалежно від статусу.",
+  r_kids_p2:"Починають з <strong>valmistava opetus</strong> — підготовчого класу (~1 рік).",
+  r_kids_p3:"Право є навіть без kotikunta. Звернись до sivistystoimi.",
+  contact_h:"Будь собою — відкрийся в HARMONY",
+  contact_sub:"Громадська організація у Фінляндії, що об'єднує людей різних культур для інтеграції, саморозвитку і творчості",
+  contact_btn:"Дізнатися більше",
+  footer_note:"Інформація актуальна станом на жовтень 2026. Завжди звіряйте дані з офіційними сайтами."
+},
+fi:{
+  h1:"Muuttajan opas Suomeen",
+  sub:"Askel askeleelta — asiakirjat, pankki, Kela, terveys ja asuminen",
+  badge:"Ajantasainen · Lokakuu 2026",
+  tab_student:"Opiskelija",tab_worker:"Työtekijä",tab_refugee:"Turvapaikanhakija",
+  agencies_h:"Tärkeimmät viranomaiset",
+  ag_migri:"Oleskelulupa, Enter Finland",ag_dvv:"Rekisteröinti, henkilötunnus",ag_vero:"Verokortti, OmaVero",
+  ag_kela:"Sosiaaliturva",ag_yths:"Opiskeluterveydenhuolto",ag_info:"Venäjäksi",
+  ag_migri_w:"Työntekijän oleskelulupa",ag_kela_w:"Sosiaaliturva, Kela-kortti",ag_te:"Työvoimapalvelut",
+  ag_migri_r:"Turvapaikka, päätös",ag_vok:"Vastaanottokeskus",ag_dvv_r:"Statuksen jälkeen: rekisteröinti",
+  ag_kela_r:"Statuksen jälkeen: etuudet",ag_vero_r:"Verokortti työtä varten",ag_info30:"30+ kielellä",
+  s_check_h:"Ensimmäiset 30 päivää — tarkistuslista",
+  s_c1:"Noutaa oleskelulupakortti tai vahvistaa Migrin päätös",
+  s_c2:"Käydä DVV:ssä henkilökohtaisesti: henkilötunnus + kotikunta + osoitteen rekisteröinti",
+  s_c3:"Avata pankkitili (S-Pankki, Nordea tai OP)",
+  s_c4:"Hankkia verokortti OmaVerosta, jos aiot töihin",
+  s_c5:"Rekisteröityä yliopistoon, saada opiskelijakortti ja YTHS-pääsy",
+  s_c6:"Tarkistaa Kelan etuusoikeus (opintotuki yleensä ei saatavilla, selvitä)",
+  s_c7:"Ottaa käyttöön Suomi.fi ja OmaKanta",
+  s_c8:"Hankkia matkakort ja suomalainen SIM-kortti",
+  s_vnj_h:"Oleskelulupa ja asiakirjat",
+  s_fee_2026:"Maksu 2026: <span class='price-tag'>600 €</span> verkossa · <span class='price-tag'>750 €</span> paperilla",
+  s_vnj_p1:"Hae Enter Finlandin kautta (enterfinland.fi) vähintään 3 kuukautta ennen ohjelman alkua.",
+  s_docs_h:"<strong>Tarvittavat asiakirjat:</strong>",
+  s_d1:"Voimassa oleva passi",s_d2:"Ehdollinen hyväksymiskirje",
+  s_d3:"Varojen todistus: vähintään <strong>9 600 €</strong> (800 €/kk × 12)",
+  s_d4:"Sairausvakuutus",s_d5:"Asumistodistus",
+  s_vnj_w1:"Apuraha vähennetään vaaditusta summasta. Ensimmäisen vuoden työtuloilla ei voi osoittaa varoja.",
+  s_vnj_p2:"<strong>Käsittelyajat 2026:</strong> 82 % myönteisistä päätöksistä 30 päivässä tai alle.",
+  s_vnj_p3:"Migrin päätöksen jälkeen — käy DVV:ssä henkilökohtaisesti. Henkilötunnus tulee usein jo Migrin päätöksen mukana.",
+  s_vnj_p4:"<strong>Jatkolupa:</strong> haettava 3 kk ennen vanhenemista. Vaaditaan vähintään <strong>45 op</strong> lukuvuodessa.",
+  s_vnj_p5:"<strong>Pysyvä oleskelulupa (8.1.2026 alkaen):</strong> 6 vuotta + B1-kielitaito tai 4 vuotta tulolla > 40 000 €/v.",
+  s_vnj_p6:"<strong>Opintojen jälkeen — työnhaku:</strong> työnhakijan oleskelulupa 12 kk (max 24 kk).",
+  s_bank_h:"Pankkitili",
+  s_bank_p1:"Tarvitaan henkilötunnus. Avattava henkilökohtaisesti Suomessa.",
+  s_bank_l1:"<strong>S-Pankki</strong> — hyväksyy ulkomaalaisia, ei ajanvarausta",
+  s_bank_l2:"<strong>Nordea</strong> — passi + henkilötunnus, ajanvaraus pakollinen",
+  s_bank_l3:"<strong>OP</strong> — ajanvaraus vaaditaan; EU:n ulkopuolisilta saatetaan tarvita suomalainen henkilöllisyyskortti",
+  s_bank_p2:"<strong>Vaihtoehdot:</strong> Wise, Revolut, Bunq — eurooppalainen IBAN ilman henkilötunnusta.",
+  s_vero_h:"Verokortti",
+  s_vero_w:"Ilman verokorttia työnantaja pidättää 60 % palkasta!",
+  s_vero_p1:"Hae <strong>OmaVerosta</strong> (vero.fi). Marraskuusta 2025 vain sähköinen verokortti.",
+  s_vero_p2:"Opiskelija voi tehdä töitä enintään <strong>30 h/vk</strong>. Harjoittelu opintosuunnitelman mukaan ei kuulu tähän rajaan.",
+  s_kela_h:"Kela ja terveys",
+  s_kela_p1:"Opiskelija ilman vakinaista asumista ei yleensä saa Kelan etuuksia.",
+  s_kela_p2:"<strong>YTHS</strong> — opiskeluterveydenhuolto: ennaltaehkäisy, lääkäri, psykologi.",
+  s_kela_p3:"Kainuussa: Kainuun hyvinvointialue. Hätänumero: 112.",
+  s_housing_h:"Asuminen",
+  s_housing_p1:"Opiskelija-asuntosäätiöt: <strong>HOAS</strong>, <strong>TOAS</strong>, <strong>POAS</strong>.",
+  s_housing_p2:"Kainuussa: Kainuun Opiskelija-asunnot. Ilmoituksia osoitteessa Vuokraovi.com.",
+  s_housing_p3:"Laki asuinhuoneiston vuokrauksesta 481/1995: vakuus ≤ 3 kk vuokra, kirjallinen sopimus pakollinen.",
+  s_housing_p4:"<strong>ARA-asunto</strong> — tulosidonnainen. Kajaanin kaupungin asuntotoimisto.",
+  s_lang_h:"Kieli ja kotoutuminen",
+  s_lang_hi:"Aloita suomen opiskelu heti ensimmäisestä lukukaudesta — B1-taso vaaditaan pysyvään oleskelulupaan.",
+  s_lang_p1:"Pysyvä oleskelulupa (8.1.2026 alkaen): <strong>B1 + 6 vuotta</strong> tai yli 40 000 €/v + 4 vuotta.",
+  s_lang_p2:"Kotoutumiskoulutus on pääasiassa työttömille — kokopäiväisille opiskelijoille yleensä ei saatavilla.",
+  s_lang_p3:"Kainuussa: KAIKO ja Kajaanin kirjastot tarjoavat ilmaisia suomen kursseja.",
+  w_check_h:"Ensimmäiset 30 päivää — tarkistuslista",
+  w_c1:"Noutaa oleskelulupakortti",w_c2:"DVV: henkilötunnus + kotikunta + osoitteen rekisteröinti",
+  w_c3:"Avata pankkitili",w_c4:"Verokortti OmaVerosta ennen ensimmäistä palkkaa (muuten 60% pidätys!)",
+  w_c5:"Ilmoittaa Kelalle 'Moving to Finland'",w_c6:"Tarkistaa työsopimus; liittyä ammattiliittoon",
+  w_c7:"Ilmoittautua työterveyshuoltoon",w_c8:"Suomi.fi tunnistautuminen; lapsille päiväkoti/koulu",
+  w_vnj_h:"Työntekijän oleskelulupa (TTOL)",
+  w_fee:"Maksu 2026: <span class='price-tag'>750 €</span> verkossa · <span class='price-tag'>950 €</span> paperilla",
+  w_vnj_p1:"Haetaan Enter Finlandin kautta. Työnantaja täydentää hakemusta.",
+  w_vnj_w1:"Erityisasiantuntija (palkka ≥ 3 937 €/kk): nopeutettu käsittely 2 viikossa, 530 € maksu.",
+  w_vnj_p2:"<strong>Käsittelyaika 2026:</strong> keskimäärin <strong>17 päivää</strong>.",
+  w_vnj_p3:"Päätöksen jälkeen — DVV henkilökohtaisesti.",
+  w_vnj_p4:"<strong>Pysyvä oleskelulupa (8.1.2026):</strong> 6 v + B1 + 2 v työkokemusta tai 4 v tulolla > 40 000 €/v.",
+  w_kela_h:"Kela ja sosiaalietuudet",
+  w_kela_hi:"Työntekijä on Kelan vakuutuksen piirissä ensimmäisestä työpäivästä palkalla ≥ 800,02 €/kk",
+  w_kela_p1:"Ilmoita Kelalle 'Moving to Finland'. Vaihtoehto: International House Helsinki (ihhelsinki.fi).",
+  w_kela_p2:"<strong>Asumistuki:</strong> pienituloisen kotitalouden asumisen tukemiseen.",
+  w_kela_p3:"<strong>Toimeentulotuki:</strong> perusosa <span class='price-tag'>578,43 €/kk</span> (maaliskuusta 2026).",
+  w_kela_p4:"<strong>Terveys:</strong> työterveyshuolto. Kainuussa — Kainuun hyvinvointialue. Hätä: 112.",
+  w_vero_h:"Verokortti ja palkka",
+  w_vero_w:"Ilman verokorttia työnantaja pidättää 60 % — hae ennen ensimmäistä palkkaa!",
+  w_vero_p1:"OmaVero (vero.fi). Vain sähköinen verokortti (marraskuusta 2025).",
+  w_vero_p2:"Yksi verokortti toimii kaikille työnantajille samanaikaisesti.",
+  w_vero_p3:"Ulkomaantuloista kannattaa konsultoida rajoitetusti verovelvollisesta verotuksesta.",
+  w_rights_h:"Työ ja oikeudet",
+  w_rights_p1:"Työsopimus — vähimmäisoikeudet TES:n (työehtosopimuksen) mukaan.",
+  w_rights_p2:"Vuosiloma: 2,5 päivää jokaisesta täydestä työkuukaudesta (yli 1 v työsuhde).",
+  w_rights_p3:"<strong>Ammattiliitot:</strong> PAM, SAK, AKT. Jäsenyys <strong>työttömyyskassassa</strong> antaa ansiosidonnaisen päivärahan.",
+  w_housing_h:"Asuminen",
+  w_housing_p1:"Laki 481/1995: vakuus ≤ 3 kk vuokra, kirjallinen sopimus pakollinen.",
+  w_housing_p2:"<strong>Yleinen asumistuki</strong> (Kela) pienituloisen. Muutoksista yli 400 €/kk ilmoitettava Kelalle.",
+  w_housing_p3:"ARA-asunto: Kajaanin kaupungin asuntotoimisto.",
+  w_lang_h:"Kieli ja kotoutuminen",
+  w_lang_p1:"Oikeus <strong>kotoutumiskoulutukseen</strong> (ilmainen suomen kurssi, KOTO24-uudistus 1.1.2025).",
+  w_lang_p2:"Kotoutumissuunnitelma laaditaan kunnan kanssa ensimmäisenä vuonna.",
+  w_lang_p3:"Kainuussa: KAIKO — aikuisten suomen kurssien pääjärjestäjä.",
+  w_kids_h:"Lapset — päiväkoti ja koulu",
+  w_kids_p1:"Hae <strong>päiväkotipaikkaa</strong> 4 kuukautta etukäteen; äkillisessä työllistymisessä 2 viikkoa.",
+  w_kids_p2:"Koulu pakollinen 7-vuotiaasta. Puutteellisella suomella aloitetaan <strong>valmistavasta opetuksesta</strong>.",
+  w_kids_p3:"Kainuussa: sivistystoimi Kajaani. Tarkista lapsilisäoikeus Kelasta.",
+  r_check_h:"Ensimmäiset 30 päivää — tarkistuslista",
+  r_c1:"Ilmoittaa suojelutarpeesta poliisille / rajaviranomaisille / Migrille (making)",
+  r_c2:"Rekisteröidä hakemus 5 päivän kuluessa, antaa biometriset tiedot (registering)",
+  r_c3:"Muuttaa osoitettuun vastaanottokeskukseen",
+  r_c4:"Jättää hakemus Migrille 21 päivän kuluessa (lodging)",
+  r_c5:"Hakea vastaanottoraha vastaanottokeskuksesta",
+  r_c6:"Järjestää lapsille paikka valmistavaan opetukseen / kouluun",
+  r_c7:"Saada terveydenhoito vastaanottokeskuksen kautta",
+  r_c8:"Passilla — oikeus töihin 3 kk; ilman passia — 6 kk",
+  r_proc_h:"Turvapaikkamenettely — 3 vaihetta (EU-pakti 12.6.2026 alkaen)",
+  r_proc_w:"12.6.2026 alkaen uusi EU-menettely. Tiukat määräajat — vaiheen ohittaminen estää käsittelyn!",
+  r_proc_p1:"<strong>Vaihe 1 — Making (Seulonta):</strong> Ilmoita suojelutarpeesta. Alkutarkistus 3–7 päivää.",
+  r_proc_p2:"<strong>Vaihe 2 — Registering:</strong> Henkilökohtainen ilmoittautuminen <strong>5 päivän</strong> kuluessa.",
+  r_proc_p3:"<strong>Vaihe 3 — Lodging:</strong> Hakemus Migrille <strong>21 päivän</strong> kuluessa.",
+  r_proc_p4:"Seuraavaksi — <strong>turvapaikkapuhuttelu</strong> ja Migrin päätös.",
+  r_proc_hi:"Suojeluajat 2025 alkaen: turvapaikka — 3 v; täydentävä suojelu — 1/2 v. Kiintiöpakolaisia 2026: 500.",
+  r_border_w:"Venäjä–Suomi raja suljettu (syyskuuta 2026). Tulo Venäjältä ei ole mahdollista.",
+  r_allow_h:"Vastaanottoraha 2026",
+  r_allow_p1:"Maksetaan vastaanottokeskuksesta hakemuksen käsittelyn ajan (ei Kela).",
+  r_allow_hi:"Yksin asuva aikuinen: <span class='price-tag'>300 €/kk</span> (ilman ateriaa) · <span class='price-tag'>88 €/kk</span> (ateria mukaan)",
+  r_allow_l1:"Muut aikuiset perheessä: 254 € / 72 €",r_allow_l2:"Yksinhuoltaja: 336 € / 97 €",
+  r_allow_l3:"Lapset 10–17 v: 210 € / 60 €",r_allow_l4:"Lapset alle 10 v: 191 € / 57 €",
+  r_allow_w:"1.3.2026 alkaen: kaikki tulot vähentävät vastaanottorahaa täysimääräisesti (150 € vähennys poistettu).",
+  r_allow_p2:"Asuminen vastaanottokeskuksessa on maksutonta.",
+  r_allow_p3:"<strong>Täydentävä vastaanottoraha</strong> erityistarpeisiin: reseptilääkkeet, silmälasit.",
+  r_med_h:"Terveydenhoito",
+  r_med_p1:"Käsittelyn aikana: aikuisille tarvittava hoito; lapsille ja raskaana oleville täysi hoito.",
+  r_med_p2:"Statuksen jälkeen — hyvinvointialue. Maahanmuuttajien terveyspalvelut 3 vuodeksi.",
+  r_med_p3:"<strong>Psykologinen tuki:</strong> SPR (Punainen Risti). Kainuussa — Kainuun hyvinvointialue.",
+  r_med_p4:"<strong>Hätätilanne aina:</strong> 112",
+  r_work_h:"Työ hakemuksen käsittelyn aikana",
+  r_work_hi:"Passilla: töihin <span class='price-tag'>3 kk</span> kuluttua · Ilman passia: <span class='price-tag'>6 kk</span> kuluttua",
+  r_work_p1:"Rajaton oikeus töihin. Verokortti OmaVeron kautta (tarvitaan henkilötunnus).",
+  r_work_w:"Kaikki ansiot vähentävät vastaanottorahaa täysimääräisesti (maaliskuusta 2026).",
+  r_after_h:"Statuksen saamisen jälkeen",
+  r_after_p1:"Migrin päätöksen jälkeen — rekisteröi <strong>kotikunta</strong> DVV:ssä ja siirry <strong>Kelan</strong> etuuksiin.",
+  r_after_p2:"Kunta laatii <strong>kotoutumissuunnitelman</strong> ja ohjaa suomen kursseille.",
+  r_after_p3:"Pankkitili: S-Pankki — helpoin vaihtoehto.",
+  r_after_p4:"Kotoutumistuki — maksetaan Kelan kautta enintään 3 vuotta.",
+  r_kids_h:"Lapset — koulutus",
+  r_kids_p1:"Turvapaikanhakijoiden lapsilla on <strong>oikeus</strong> maksuttomaan koulutukseen.",
+  r_kids_p2:"Aloitetaan <strong>valmistavasta opetuksesta</strong> (~1 vuosi).",
+  r_kids_p3:"Oikeus on myös ilman kotikuntaa. Ota yhteyttä sivistystoimeen.",
+  contact_h:"Ole oma itsesi — avaudu HARMONYssa",
+  contact_sub:"Suomessa toimiva yhdistys, joka yhdistää eri kulttuureista tulevia ihmisiä kotoutumisen, itsensä kehittämisen ja luovuuden kautta",
+  contact_btn:"Tutustu meihin",
+  footer_note:"Tiedot ovat ajantasaisia lokakuussa 2026. Tarkista aina virallisilta sivustoilta."
+},
+en:{
+  h1:"Finland Newcomer's Guide",
+  sub:"Step-by-step guide for new arrivals — documents, bank, Kela, healthcare and housing",
+  badge:"Up to date · October 2026",
+  tab_student:"Student",tab_worker:"Worker",tab_refugee:"Asylum seeker",
+  agencies_h:"Key authorities",
+  ag_migri:"Residence permit, Enter Finland",ag_dvv:"Registration, personal ID",ag_vero:"Tax card, OmaVero",
+  ag_kela:"Social insurance",ag_yths:"Student healthcare",ag_info:"In Russian",
+  ag_migri_w:"Work-based permit (TTOL)",ag_kela_w:"Social insurance, Kela card",ag_te:"Employment services",
+  ag_migri_r:"Asylum, decision",ag_vok:"Reception centre",ag_dvv_r:"After status: registration",
+  ag_kela_r:"After status: benefits",ag_vero_r:"Tax card when working",ag_info30:"30+ languages",
+  s_check_h:"First 30 days — checklist",
+  s_c1:"Collect oleskelulupakortti (residence permit card) or confirm Migri's decision",
+  s_c2:"Visit DVV in person: personal ID + home municipality + register address",
+  s_c3:"Open a bank account (S-Pankki, Nordea or OP)",
+  s_c4:"Get a tax card (verokortti) via OmaVero if you plan to work",
+  s_c5:"Register at university, get student card and YTHS access",
+  s_c6:"Check Kela eligibility (study grant usually unavailable, but verify)",
+  s_c7:"Set up Suomi.fi and OmaKanta",
+  s_c8:"Get a travel card and a Finnish SIM card",
+  s_vnj_h:"Residence permit and documents",
+  s_fee_2026:"Fee 2026: <span class='price-tag'>€600</span> online · <span class='price-tag'>€750</span> paper",
+  s_vnj_p1:"Apply via <strong>Enter Finland</strong> (enterfinland.fi) at least 3 months before your programme starts.",
+  s_docs_h:"<strong>Documents needed:</strong>",
+  s_d1:"Valid passport",s_d2:"Unconditional letter of acceptance",
+  s_d3:"Proof of funds: at least <strong>€9,600</strong> (€800/month × 12)",
+  s_d4:"Health insurance",s_d5:"Proof of accommodation",
+  s_vnj_w1:"Scholarships are deducted from the required amount. First-year work income does NOT count towards funds.",
+  s_vnj_p2:"<strong>Processing times 2026:</strong> 82% of positive decisions within 30 days.",
+  s_vnj_p3:"After Migri's decision — visit <strong>DVV</strong> in person. Personal ID is often assigned with the Migri decision itself.",
+  s_vnj_p4:"<strong>Extension (jatkolupa):</strong> apply 3 months before expiry. At least <strong>45 ECTS</strong> per academic year required.",
+  s_vnj_p5:"<strong>Permanent residence (from 8 Jan 2026):</strong> 6 years + B1 language level, or 4 years with income > <strong>€40,000/year</strong>.",
+  s_vnj_p6:"<strong>Post-study job search permit:</strong> 12 months (extendable to 24 months).",
+  s_bank_h:"Bank account",
+  s_bank_p1:"You need a personal ID number. Accounts must be opened in person in Finland.",
+  s_bank_l1:"<strong>S-Pankki</strong> — accepts foreigners, no appointment needed",
+  s_bank_l2:"<strong>Nordea</strong> — passport + personal ID, appointment required",
+  s_bank_l3:"<strong>OP</strong> — appointment required; non-EU citizens may need a Finnish ID card",
+  s_bank_p2:"<strong>Alternatives:</strong> Wise, Revolut, Bunq — European IBAN without a Finnish personal ID.",
+  s_vero_h:"Tax card (verokortti)",
+  s_vero_w:"Without a tax card your employer will withhold 60% of your salary!",
+  s_vero_p1:"Apply via <strong>OmaVero</strong> (vero.fi). Since November 2025 tax cards are digital only.",
+  s_vero_p2:"Students may work up to <strong>30 h/week</strong>. Internships in the study plan do not count towards this limit.",
+  s_kela_h:"Kela and healthcare",
+  s_kela_p1:"Students without permanent residence are usually <strong>not eligible</strong> for Kela benefits.",
+  s_kela_p2:"<strong>YTHS</strong> — student health service: preventive care, doctor, psychologist.",
+  s_kela_p3:"In Kainuu: Kainuun hyvinvointialue. Emergency: 112.",
+  s_housing_h:"Housing",
+  s_housing_p1:"Student foundations: <strong>HOAS</strong> (Helsinki), <strong>TOAS</strong> (Tampere), <strong>POAS</strong> (Oulu).",
+  s_housing_p2:"In Kainuu: Kainuun Opiskelija-asunnot. Listings at Vuokraovi.com and Oikotie.fi.",
+  s_housing_p3:"Act on residential tenancy (481/1995): deposit ≤ 3 months' rent, written contract required.",
+  s_housing_p4:"<strong>ARA housing</strong> — income-based subsidy. Kajaani city housing office.",
+  s_lang_h:"Language and integration",
+  s_lang_hi:"Start Finnish from day one — B1 level is needed for permanent residence after 6 years.",
+  s_lang_p1:"Permanent residence (from 8 Jan 2026): <strong>B1 + 6 years</strong>, or income > €40,000/year + 4 years.",
+  s_lang_p2:"Integration language training (kotoutumiskoulutus) is mainly for unemployed people — usually not available for full-time students.",
+  s_lang_p3:"In Kainuu: KAIKO and Kajaani libraries offer free Finnish classes.",
+  w_check_h:"First 30 days — checklist",
+  w_c1:"Collect residence permit card",w_c2:"DVV: personal ID + home municipality + register address",
+  w_c3:"Open a bank account",w_c4:"Get tax card from OmaVero before first paycheck (otherwise 60% deduction!)",
+  w_c5:"Submit 'Moving to Finland' to Kela",w_c6:"Review employment contract; join trade union and unemployment fund",
+  w_c7:"Register for occupational healthcare (työterveyshuolto)",
+  w_c8:"Suomi.fi identification; for children — daycare/school",
+  w_vnj_h:"Work-based residence permit (TTOL)",
+  w_fee:"Fee 2026: <span class='price-tag'>€750</span> online · <span class='price-tag'>€950</span> paper",
+  w_vnj_p1:"Apply via <strong>Enter Finland</strong>. Employer supplements the application with employment conditions.",
+  w_vnj_w1:"Specialist (salary ≥ €3,937/month): fast-track, decision in 2 weeks, fee €530 online.",
+  w_vnj_p2:"<strong>Processing times 2026:</strong> average <strong>17 days</strong> (July 2026 data).",
+  w_vnj_p3:"After the decision — visit DVV in person.",
+  w_vnj_p4:"<strong>Permanent residence (from 8 Jan 2026):</strong> 6 years + B1 + 2 years employment, or 4 years with income > €40,000/year.",
+  w_kela_h:"Kela and social benefits",
+  w_kela_hi:"Workers are covered by Kela from day one with salary ≥ €800.02/month",
+  w_kela_p1:"Submit 'Moving to Finland' to Kela. Alternative: <strong>International House Helsinki</strong> (ihhelsinki.fi).",
+  w_kela_p2:"<strong>Housing benefit (asumistuki):</strong> for low-income households.",
+  w_kela_p3:"<strong>Income support (toimeentulotuki):</strong> basic amount <span class='price-tag'>€578.43/month</span> (from March 2026).",
+  w_kela_p4:"<strong>Healthcare:</strong> via employer (occupational health). In Kainuu — Kainuun hyvinvointialue. Emergency: 112.",
+  w_vero_h:"Tax card and salary",
+  w_vero_w:"Without a tax card your employer will withhold 60% — get it before your first pay!",
+  w_vero_p1:"OmaVero (vero.fi). Digital cards only since November 2025.",
+  w_vero_p2:"One card works for all employers simultaneously.",
+  w_vero_p3:"If you have income from outside Finland, consult about non-resident taxation.",
+  w_rights_h:"Work and rights",
+  w_rights_p1:"Employment contract (työsopimus) — minimum rights under the collective agreement (<strong>TES</strong>) for your sector.",
+  w_rights_p2:"Paid leave: 2.5 days per full working month (after 1 year of employment).",
+  w_rights_p3:"<strong>Trade unions:</strong> PAM, SAK, AKT. Membership in an <strong>unemployment fund</strong> provides earnings-related benefit.",
+  w_housing_h:"Housing",
+  w_housing_p1:"Tenancy act 481/1995: deposit ≤ 3 months' rent, written contract required.",
+  w_housing_p2:"<strong>General housing benefit</strong> (Kela) for low income. Notify Kela if income changes by > €400/month.",
+  w_housing_p3:"ARA subsidised housing: Kajaani city housing office.",
+  w_lang_h:"Language and integration",
+  w_lang_p1:"Right to <strong>integration training</strong> (kotoutumiskoulutus) — free via TE-services, KOTO24 reform from 1 Jan 2025.",
+  w_lang_p2:"Integration plan (kotoutumissuunnitelma) is drawn up with the municipality in the first year.",
+  w_lang_p3:"In Kainuu: KAIKO is the main provider of Finnish language classes for adults.",
+  w_kids_h:"Children — daycare and school",
+  w_kids_p1:"Apply for <strong>daycare (päiväkoti)</strong> 4 months in advance; in case of sudden employment — 2 weeks.",
+  w_kids_p2:"School is compulsory from age 7. Children with insufficient Finnish start with <strong>preparatory teaching</strong>.",
+  w_kids_p3:"In Kainuu: sivistystoimi Kajaani. Check child benefit (lapsilisä) eligibility at Kela.",
+  r_check_h:"First 30 days — checklist",
+  r_c1:"Notify the police / border guard / Migri about your intention to seek protection (making)",
+  r_c2:"Register your application within 5 days, provide biometrics (registering)",
+  r_c3:"Move to the assigned reception centre (vastaanottokeskus)",
+  r_c4:"Submit asylum application to Migri within 21 days (lodging)",
+  r_c5:"Apply for reception allowance (vastaanottoraha) at your reception centre",
+  r_c6:"Enrol children in preparatory teaching or school",
+  r_c7:"Access healthcare through the reception centre",
+  r_c8:"With passport: right to work after 3 months; without: after 6 months",
+  r_proc_h:"Asylum procedure — 3 steps (EU Pact from 12 Jun 2026)",
+  r_proc_w:"New EU procedure in force from 12 June 2026. Strict deadlines — missing a step means losing your case!",
+  r_proc_p1:"<strong>Step 1 — Making (Screening):</strong> Notify of protection need. Screening phase 3–7 days.",
+  r_proc_p2:"<strong>Step 2 — Registering:</strong> Appear in person within <strong>5 days</strong> for biometrics.",
+  r_proc_p3:"<strong>Step 3 — Lodging:</strong> Submit application to Migri within <strong>21 days</strong>.",
+  r_proc_p4:"Next — <strong>turvapaikkapuhuttelu</strong> (asylum interview) and Migri decision.",
+  r_proc_hi:"Protection periods from 2025: asylum — 3 years; subsidiary protection — 1/2 years. 2026 resettlement quota: 500 people.",
+  r_border_w:"Russia–Finland border is closed (as of September 2026). Entry via Russia is not possible.",
+  r_allow_h:"Reception allowance (vastaanottoraha) 2026",
+  r_allow_p1:"Paid by the reception centre during processing (not Kela).",
+  r_allow_hi:"Single adult: <span class='price-tag'>€300/month</span> (no meals) · <span class='price-tag'>€88/month</span> (meals included)",
+  r_allow_l1:"Other adults in family: €254 / €72",r_allow_l2:"Single parent: €336 / €97",
+  r_allow_l3:"Children 10–17: €210 / €60",r_allow_l4:"Children under 10: €191 / €57",
+  r_allow_w:"From 1 March 2026: all earnings reduce the allowance in full (€150 exemption abolished).",
+  r_allow_p2:"Accommodation at the reception centre is free.",
+  r_allow_p3:"<strong>Supplementary allowance (täydentävä vastaanottoraha)</strong> for special needs: prescription drugs, glasses.",
+  r_med_h:"Healthcare",
+  r_med_p1:"During processing: adults receive necessary care; children and pregnant women receive full care.",
+  r_med_p2:"After status — regional health authority (hyvinvointialue). Some regions have Immigrant Health Services for 3 years.",
+  r_med_p3:"<strong>Psychological support:</strong> Finnish Red Cross (Punainen Risti). In Kainuu — Kainuun hyvinvointialue.",
+  r_med_p4:"<strong>Emergency care always:</strong> 112",
+  r_work_h:"Working during the asylum process",
+  r_work_hi:"With passport: right to work after <span class='price-tag'>3 months</span> · Without: after <span class='price-tag'>6 months</span>",
+  r_work_p1:"No sector restrictions. Get a tax card via OmaVero (personal ID needed).",
+  r_work_w:"All earnings reduce the reception allowance in full from March 2026.",
+  r_after_h:"After receiving status",
+  r_after_p1:"After Migri's positive decision — register <strong>home municipality</strong> at DVV and move to <strong>Kela</strong> benefits.",
+  r_after_p2:"The municipality draws up an <strong>integration plan</strong> and refers you to Finnish language courses.",
+  r_after_p3:"Bank account: S-Pankki is the most accessible option.",
+  r_after_p4:"Integration benefit (kotoutumistuki) — paid via Kela for up to 3 years.",
+  r_kids_h:"Children — education",
+  r_kids_p1:"Children of asylum seekers have a <strong>right</strong> to free basic education regardless of status.",
+  r_kids_p2:"They start with <strong>preparatory teaching</strong> (~1 year of Finnish and integration).",
+  r_kids_p3:"Right to education exists even without a home municipality. Contact the local sivistystoimi.",
+  contact_h:"Be yourself — open up in HARMONY",
+  contact_sub:"A community organisation in Finland bringing together people of different cultures for integration, self-growth and creativity",
+  contact_btn:"Meet us",
+  footer_note:"Information is current as of October 2026. Always verify with official sources."
+}
+};
+
+var currentLang='ru';
+
+function applyLang(lang){
+  currentLang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key=el.getAttribute('data-i18n');
+    if(T[lang]&&T[lang][key]!==undefined) el.textContent=T[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+    var key=el.getAttribute('data-i18n-html');
+    if(T[lang]&&T[lang][key]!==undefined) el.innerHTML=T[lang][key];
+  });
+  // Rich keys used inside spans
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key=el.getAttribute('data-i18n');
+    if(T[lang]&&T[lang][key]!==undefined&&T[lang][key].indexOf('<')!==-1){
+      el.innerHTML=T[lang][key];
+    }
+  });
+  document.documentElement.lang=lang==='fi'?'fi':lang==='en'?'en':lang==='ua'?'uk':'ru';
+}
+
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    if(b.textContent.trim().toLowerCase()===lang) b.classList.add('active');
+  });
+  try{localStorage.setItem('hl-lang',lang);}catch(e){}
+  applyLang(lang);
+}
+
+function showTab(id,e){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('tab-'+id).classList.add('active');
+  var btn=e.target.closest('.tab-btn');
+  if(btn) btn.classList.add('active');
+}
+
+(function(){
+  var saved;
+  try{saved=localStorage.getItem('hl-lang');}catch(e){}
+  if(saved&&T[saved]){setLang(saved);}
+})();
+</script>
+</body>
+</html>
